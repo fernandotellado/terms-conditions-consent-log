@@ -11,5 +11,6 @@ Naming convention so the README can pick them up:
 | `03-order-metabox.png` | Order edit screen with the consent metabox (summary, integrity badge, certificate button). |
 | `04-orders-column.png` | Consent column on the orders list. |
 | `05-certificate.png` | Printable A4 certificate (the browser saves it as PDF). |
+| `06-csv.png` | Exported CSV file with filtered records. |
 
 Recommended size: 1600×1000 (or any 16:10 ratio) PNG, < 300 KB each.
