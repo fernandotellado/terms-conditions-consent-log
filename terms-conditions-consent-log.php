@@ -13,6 +13,8 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: terms-conditions-consent-log
  * Domain Path: /languages
+ * WC requires at least: 7.0
+ * WC tested up to: 10.7
  *
  * @package TermsConditionsConsentLog
  */

@@ -144,7 +144,15 @@ Initial release.
 
 == Support ==
 
+Need help or have suggestions?
+
 * [Official website](https://servicios.ayudawp.com)
-* [WordPress support forum](https://wordpress.org/support/plugin/terms-conditions-consent-log/)
+* [WordPress support forum](https://wordpress.org/support/plugin/eu-withdrawal-compliance/)
 * [YouTube channel](https://www.youtube.com/AyudaWordPressES)
 * [Documentation and tutorials](https://ayudawp.com)
+
+Love the plugin? Please leave us a 5-star review and help spread the word!
+
+== About AyudaWP.com ==
+
+We are specialists in WordPress security, SEO, AI and performance optimization plugins. We create tools that solve real problems for WordPress site owners while maintaining the highest coding standards and accessibility requirements.
