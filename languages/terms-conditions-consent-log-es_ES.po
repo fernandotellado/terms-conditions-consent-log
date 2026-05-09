@@ -1,0 +1,1459 @@
+# Spanish (es_ES) translation for Terms & Conditions Consent Log.
+# Copyright (C) 2026 Fernando Tellado
+# This file is distributed under the same license as the Terms & Conditions Consent Log plugin.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Terms & Conditions Consent Log 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/fernandot/terms-conditions-consent-"
+"log/issues\n"
+"POT-Creation-Date: 2026-05-09 22:42+0200\n"
+"PO-Revision-Date: 2026-05-09 20:40+0200\n"
+"Last-Translator: Fernando Tellado <fernando@tellado.es>\n"
+"Language-Team: Spanish (Spain) <es@li.org>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: terms-conditions-consent-log\n"
+"X-Generator: Poedit 3.9\n"
+
+#: terms-conditions-consent-log.php:93 includes/admin-page.php:367
+msgid "Settings"
+msgstr "Ajustes"
+
+#: includes/admin-page.php:18 includes/admin-page.php:19
+#: includes/privacy-tools.php:102
+msgid "Consent log"
+msgstr "Consentimientos"
+
+#: includes/admin-page.php:62 includes/admin-page.php:112
+#: includes/admin-page.php:143 includes/admin-page.php:181
+#: includes/admin-page.php:307 includes/certificate-pdf.php:50
+#: includes/export-csv.php:76
+msgid "You do not have permission to perform this action."
+msgstr "No tienes permisos para realizar esta acción."
+
+#: includes/admin-page.php:65 includes/admin-page.php:116
+#: includes/admin-page.php:146 includes/admin-page.php:184
+#: includes/admin-page.php:311 includes/certificate-pdf.php:58
+#: includes/export-csv.php:79
+msgid "Security check failed."
+msgstr "Comprobación de seguridad fallida."
+
+#: includes/admin-page.php:360
+msgid "Terms &amp; Conditions Consent Log"
+msgstr "Registro de consentimientos de términos y condiciones"
+
+#: includes/admin-page.php:364
+msgid "Records"
+msgstr "Registros"
+
+#. translators: %d: number of anonymised records.
+#: includes/admin-page.php:447
+#, php-format
+msgid "%d filtered record anonymised."
+msgid_plural "%d filtered records anonymised."
+msgstr[0] "%d registro filtrado anonimizado."
+msgstr[1] "%d registros filtrados anonimizados."
+
+#: includes/admin-page.php:458
+#, php-format
+msgid ""
+"Verified %1$d records · %2$d intact · %3$d tampered · %4$d unsealed (legacy)."
+msgstr ""
+"Verificados %1$d registros · %2$d íntegros · %3$d alterados · %4$d sin sello "
+"(anteriores)."
+
+#: includes/admin-page.php:474
+msgid "Email (starts with)"
+msgstr "Correo electrónico (empieza por)"
+
+#: includes/admin-page.php:475
+msgid "customer@"
+msgstr "cliente@"
+
+#: includes/admin-page.php:479
+msgid "Order # (starts with)"
+msgstr "Pedido nº (empieza por)"
+
+#: includes/admin-page.php:480
+msgid "1234"
+msgstr "1234"
+
+#: includes/admin-page.php:484 includes/export-csv.php:54
+msgid "From"
+msgstr "Desde"
+
+#: includes/admin-page.php:485 includes/admin-page.php:490
+msgid "YYYY-MM-DD"
+msgstr "AAAA-MM-DD"
+
+#: includes/admin-page.php:489 includes/export-csv.php:57
+msgid "To"
+msgstr "Hasta"
+
+#: includes/admin-page.php:495 includes/admin-page.php:568
+#: includes/export-csv.php:60 includes/privacy-tools.php:67
+msgid "Type"
+msgstr "Tipo"
+
+#: includes/admin-page.php:497
+msgid "Any"
+msgstr "Cualquiera"
+
+#: includes/admin-page.php:506
+msgid "Clear"
+msgstr "Limpiar"
+
+#: includes/admin-page.php:508
+msgid "Export filtered to CSV"
+msgstr "Exportar filtrado a CSV"
+
+#: includes/admin-page.php:508
+msgid "Export all to CSV"
+msgstr "Exportar todo a CSV"
+
+#: includes/admin-page.php:515
+msgid ""
+"Anonymise all records that match the current filter? Records are kept; PII "
+"is scrubbed."
+msgstr ""
+"¿Anonimizar todos los registros que coincidan con el filtro actual? Los "
+"registros se conservan; los datos personales se borran."
+
+#: includes/admin-page.php:520
+msgid "Anonymise filtered"
+msgstr "Anonimizar filtrados"
+
+#: includes/admin-page.php:534
+msgid "Verify integrity"
+msgstr "Verificar integridad"
+
+#: includes/admin-page.php:538
+msgid ""
+"Recomputes every record's SHA-256 and compares it to the sealed hash. "
+"Reports intact, tampered and unsealed (legacy) totals."
+msgstr ""
+"Recalcula el SHA-256 de cada registro y lo compara con el sello almacenado. "
+"Informa de los totales íntegros, alterados y sin sello (anteriores)."
+
+#: includes/admin-page.php:564 includes/export-csv.php:23
+msgid "ID"
+msgstr "ID"
+
+#: includes/admin-page.php:565
+msgid "Date (UTC)"
+msgstr "Fecha (UTC)"
+
+#: includes/admin-page.php:566 includes/certificate-pdf.php:264
+#: includes/export-csv.php:26
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: includes/admin-page.php:567
+msgid "Order"
+msgstr "Pedido"
+
+#: includes/admin-page.php:569 includes/emails.php:60
+#: includes/order-metabox.php:61
+msgid "Version"
+msgstr "Versión"
+
+#: includes/admin-page.php:570
+msgid "Status"
+msgstr "Estado"
+
+#: includes/admin-page.php:571 includes/emails.php:51
+msgid "IP"
+msgstr "IP"
+
+#: includes/admin-page.php:572 includes/order-metabox.php:73
+msgid "Integrity"
+msgstr "Integridad"
+
+#: includes/admin-page.php:573
+msgid "Accepted text + SHA-256"
+msgstr "Texto aceptado + SHA-256"
+
+#: includes/admin-page.php:574
+msgid "Actions"
+msgstr "Acciones"
+
+#: includes/admin-page.php:579
+msgid "No records match your filter."
+msgstr "Ningún registro coincide con tu filtro."
+
+#: includes/admin-page.php:599
+msgid "YES"
+msgstr "SÍ"
+
+#: includes/admin-page.php:601
+msgid "no"
+msgstr "no"
+
+#: includes/admin-page.php:604 includes/order-metabox.php:65
+msgid "Outdated"
+msgstr "Obsoleto"
+
+#: includes/admin-page.php:610
+msgid "unsealed"
+msgstr "sin sello"
+
+#: includes/admin-page.php:614
+msgid "Stored text does not match its sealed hash"
+msgstr "El texto guardado no coincide con su hash sellado"
+
+#: includes/admin-page.php:614 includes/certificate-pdf.php:292
+#: includes/order-metabox.php:80
+msgid "TAMPERED"
+msgstr "ALTERADO"
+
+#: includes/admin-page.php:629
+msgid "Download PDF certificate"
+msgstr "Descargar certificado PDF"
+
+#. translators: %s: number of records (formatted).
+#: includes/admin-page.php:672
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] "%s elemento"
+msgstr[1] "%s elementos"
+
+#: includes/admin-page.php:684
+msgid "First page"
+msgstr "Primera página"
+
+#: includes/admin-page.php:693
+msgid "Previous page"
+msgstr "Página anterior"
+
+#: includes/admin-page.php:699
+msgid "Current page"
+msgstr "Página actual"
+
+#: includes/admin-page.php:702
+msgid "of"
+msgstr "de"
+
+#: includes/admin-page.php:711
+msgid "Next page"
+msgstr "Página siguiente"
+
+#: includes/admin-page.php:720
+msgid "Last page"
+msgstr "Última página"
+
+#: includes/admin-page.php:738
+msgid "Settings saved."
+msgstr "Ajustes guardados."
+
+#. translators: %d: number of anonymised records.
+#: includes/admin-page.php:746
+#, php-format
+msgid "%d record anonymised."
+msgid_plural "%d records anonymised."
+msgstr[0] "%d registro anonimizado."
+msgstr[1] "%d registros anonimizados."
+
+#: includes/admin-page.php:756
+msgid "Checkout texts"
+msgstr "Textos al finalizar compra"
+
+#: includes/admin-page.php:758
+msgid ""
+"Both fields are optional. Whatever the customer is actually shown is what "
+"gets stored with each record."
+msgstr ""
+"Ambos campos son opcionales. Lo que de verdad ve el cliente es lo que se "
+"guarda con cada registro."
+
+#: includes/admin-page.php:762
+msgid "Terms checkbox text"
+msgstr "Texto de términos al finalizar compra"
+
+#: includes/admin-page.php:766
+msgid "Optional"
+msgstr "Opcional"
+
+#: includes/admin-page.php:767
+msgid ""
+"Replaces the text next to the terms checkbox in the checkout. Leave empty to "
+"use the WooCommerce native text (shown as the placeholder above). Basic HTML "
+"is allowed (links, strong, em)."
+msgstr ""
+"Sustituye el texto que aparece junto a la casilla de términos al finalizar "
+"la compra. Déjalo vacío para usar el texto nativo de WooCommerce (el que se "
+"muestra arriba como placeholder). Se permite HTML básico (enlaces, strong, "
+"em)."
+
+#: includes/admin-page.php:769
+msgid ""
+"GDPR requires explicit consent — the customer must actively check the box. "
+"The plugin enforces nothing here; WooCommerce already does."
+msgstr ""
+"El RGPD exige consentimiento explícito: el cliente tiene que marcar la "
+"casilla activamente. El plugin no fuerza nada aquí, ya lo hace WooCommerce."
+
+#: includes/admin-page.php:774
+msgid "Pre-checkout informational text"
+msgstr "Texto informativo antes del pago"
+
+#: includes/admin-page.php:776
+msgid ""
+"Example: We are the data controller for the data you provide here. Purpose: "
+"process your order. Recipients: shipping and payment providers. You can "
+"access, rectify and delete your data, more info in our privacy policy."
+msgstr ""
+"Ejemplo: Somos los responsables del tratamiento de los datos que facilitas "
+"aquí. Finalidad: tramitar tu pedido. Destinatarios: proveedores de envío y "
+"pago. Puedes acceder, rectificar y eliminar tus datos, más información en "
+"nuestra política de privacidad."
+
+#: includes/admin-page.php:778
+msgid "Optional, but legally relevant"
+msgstr "Opcional, pero legalmente relevante"
+
+#: includes/admin-page.php:779
+msgid ""
+"GDPR article 13 requires you to inform the data subject about the "
+"controller, the purpose, the legal basis, the recipients and their rights, "
+"before consent is collected. If your site does not show that information at "
+"checkout via another route, fill this field. If your privacy policy or "
+"another notice already does, you can leave it empty."
+msgstr ""
+"El artículo 13 del RGPD obliga a informar al interesado del responsable, la "
+"finalidad, la base legal, los destinatarios y sus derechos antes de recoger "
+"el consentimiento. Si tu sitio no muestra esa información en el checkout por "
+"otra vía, rellena este campo. Si tu política de privacidad u otro aviso ya "
+"lo hace, puedes dejarlo vacío."
+
+#: includes/admin-page.php:785 includes/certificate-pdf.php:268
+#: includes/export-csv.php:28 includes/privacy-tools.php:71
+msgid "Document version"
+msgstr "Versión del documento"
+
+#: includes/admin-page.php:787
+msgid ""
+"A label for the current wording of your terms. Older records keep the "
+"version they signed and are never modified, so you can always prove which "
+"text each customer accepted. Records on a previous version show as "
+"\"Outdated\" — that is informative, not an error."
+msgstr ""
+"Una etiqueta para el texto actual de tus términos. Los registros antiguos "
+"conservan la versión que firmaron y nunca se modifican, así siempre puedes "
+"demostrar qué texto aceptó cada cliente. Los registros de una versión "
+"anterior aparecen como \"Obsoleto\": es solo informativo, no un error."
+
+#: includes/admin-page.php:791
+msgid "Current version"
+msgstr "Versión actual"
+
+#: includes/admin-page.php:795
+msgid ""
+"Suggested format: MAJOR.MINOR-YYYY-MM-DD (e.g. 1.2-2026-05-09). What matters "
+"is that the string changes whenever your text changes."
+msgstr ""
+"Formato sugerido: MAYOR.MENOR-AAAA-MM-DD (p. ej. 1.2-2026-05-09). Lo "
+"importante es que la cadena cambie cada vez que cambia tu texto."
+
+#. translators: %s: suggested next version.
+#: includes/admin-page.php:803
+#, php-format
+msgid "Bump version on save (suggestion: %s)."
+msgstr "Subir versión al guardar (sugerencia: %s)."
+
+#: includes/admin-page.php:810
+msgid ""
+"You usually do not need to touch this field. If you change the terms text "
+"and forget to bump the version, the plugin bumps it automatically when you "
+"save."
+msgstr ""
+"Normalmente no necesitas tocar este campo. Si cambias el texto de los "
+"términos y olvidas subir la versión, el plugin la sube automáticamente al "
+"guardar."
+
+#: includes/admin-page.php:816
+msgid "Tracking and retention"
+msgstr "Registro y retención"
+
+#: includes/admin-page.php:818
+msgid ""
+"IP and user-agent are not required by GDPR, but they reinforce the "
+"credibility of each record."
+msgstr ""
+"La IP y el user-agent no los exige el RGPD, pero refuerzan la credibilidad "
+"de cada registro."
+
+#: includes/admin-page.php:822 includes/certificate-pdf.php:270
+#: includes/export-csv.php:32 includes/privacy-tools.php:83
+msgid "IP address"
+msgstr "Dirección IP"
+
+#: includes/admin-page.php:826
+msgid "Record the client IP address"
+msgstr "Guardar la IP del cliente"
+
+#: includes/admin-page.php:829 includes/admin-page.php:842
+msgid "Recommended"
+msgstr "Recomendado"
+
+#: includes/admin-page.php:830
+msgid ""
+"Read from REMOTE_ADDR. Forwarded headers are not trusted (they can be "
+"spoofed without a verified reverse proxy). Disable only if your privacy "
+"policy says you do not log IPs."
+msgstr ""
+"Se lee de REMOTE_ADDR. No se confía en cabeceras reenviadas (se pueden "
+"falsear sin un proxy inverso verificado). Desactívalo solo si tu política de "
+"privacidad indica que no registras IPs."
+
+#: includes/admin-page.php:835 includes/certificate-pdf.php:271
+#: includes/export-csv.php:33 includes/privacy-tools.php:87
+msgid "User agent"
+msgstr "User-agent"
+
+#: includes/admin-page.php:839
+msgid "Record the browser user agent"
+msgstr "Guardar el user-agent del navegador"
+
+#: includes/admin-page.php:843
+msgid ""
+"Reinforces evidence (helps spot automated submissions). Disable if your "
+"privacy policy says you do not log it."
+msgstr ""
+"Refuerza la prueba (ayuda a detectar envíos automatizados). Desactívalo si "
+"tu política de privacidad indica que no lo registras."
+
+#: includes/admin-page.php:848
+msgid "Retention (days)"
+msgstr "Retención (días)"
+
+#: includes/admin-page.php:852
+msgid "GDPR requires you to define a retention period"
+msgstr "El RGPD exige definir un periodo de retención"
+
+#: includes/admin-page.php:853
+msgid ""
+"After this many days, records are eligible for anonymisation (PII removed "
+"but the record is kept as proof of consent). 0 = indefinite — only "
+"acceptable if you can justify it (e.g. statute of limitations for civil "
+"claims, typically 5 years in Spain)."
+msgstr ""
+"Pasados estos días, los registros pueden anonimizarse (se borran los datos "
+"personales pero el registro se conserva como prueba del consentimiento). 0 = "
+"indefinido. Solo recomendable si puedes justificarlo (p. ej. el plazo de "
+"prescripción de acciones civiles, normalmente 5 años en España)."
+
+#: includes/admin-page.php:859
+msgid "Anonymise old records"
+msgstr "Anonimizar registros antiguos"
+
+#: includes/admin-page.php:861
+msgid ""
+"Removes PII (email, IP, user-agent) from records older than the retention "
+"period. The records themselves are kept as proof of consent."
+msgstr ""
+"Elimina los datos personales (correo, IP, user-agent) de los registros más "
+"antiguos que el periodo de retención. Los registros se conservan como prueba "
+"del consentimiento."
+
+#: includes/admin-page.php:869
+msgid ""
+"This will anonymise all records older than the retention period. Continue?"
+msgstr ""
+"Esto anonimizará todos los registros más antiguos que el periodo de "
+"retención. ¿Continuar?"
+
+#: includes/admin-page.php:870
+msgid "Anonymise now"
+msgstr "Anonimizar ahora"
+
+#: includes/admin-page.php:873
+msgid "Set a retention period above to enable this action."
+msgstr "Configura un periodo de retención arriba para habilitar esta acción."
+
+#: includes/admin-page.php:877
+msgid "Order emails"
+msgstr "Emails del pedido"
+
+#: includes/admin-page.php:879
+msgid ""
+"Off by default. Not required by GDPR — the record itself is the legal "
+"evidence."
+msgstr ""
+"Desactivado por defecto. No lo exige el RGPD: la prueba legal es el propio "
+"registro."
+
+#: includes/admin-page.php:883
+msgid "Admin email"
+msgstr "Correo electrónico del administrador"
+
+#: includes/admin-page.php:887
+msgid "Show a consent line in the New order email (admin)"
+msgstr ""
+"Mostrar una línea de consentimiento en el correo electrónico de nuevo pedido "
+"(admin)"
+
+#: includes/admin-page.php:890
+msgid ""
+"Useful so the shop manager sees ✓ Terms accepted · version · IP at a glance, "
+"without opening each order. Recommended for shops with several people "
+"processing orders."
+msgstr ""
+"Útil para que el gestor de la tienda vea de un vistazo ✓ Términos aceptados "
+"· versión · IP, sin abrir cada pedido. Recomendable en tiendas con varias "
+"personas procesando pedidos."
+
+#: includes/admin-page.php:895
+msgid "Customer email"
+msgstr "Correo electrónico del cliente"
+
+#: includes/admin-page.php:899
+msgid "Show a consent line in the order confirmation email (customer)"
+msgstr ""
+"Mostrar una línea de consentimiento en el correo electrónico de confirmación "
+"del pedido (cliente)"
+
+#: includes/admin-page.php:902
+msgid ""
+"Reinforces transparency toward the customer. Some customers expect a "
+"confirmation that their acceptance was recorded; others may find it unusual. "
+"Off by default; turn it on if it fits your brand."
+msgstr ""
+"Refuerza la transparencia hacia el cliente. Algunos clientes esperan que se "
+"les confirme que su aceptación quedó registrada; a otros puede resultarles "
+"extraño. Desactivado por defecto; actívalo si encaja con tu marca."
+
+#: includes/admin-page.php:908
+msgid "Uninstall"
+msgstr "Desinstalación"
+
+#: includes/admin-page.php:911
+msgid "On uninstall"
+msgstr "Al desinstalar"
+
+#: includes/admin-page.php:915
+msgid "Delete all plugin data when the plugin is uninstalled"
+msgstr "Borrar todos los datos del plugin cuando se desinstale"
+
+#: includes/admin-page.php:919
+msgid "This destroys consent evidence."
+msgstr "Esto destruye la prueba del consentimiento."
+
+#: includes/admin-page.php:920
+msgid ""
+"If this option is enabled, uninstalling the plugin will permanently drop the "
+"consent table and remove all settings. Only deactivating the plugin does NOT "
+"trigger this — uninstall does."
+msgstr ""
+"Si activas esta opción, al desinstalar el plugin se eliminará la tabla de "
+"consentimientos y todos los ajustes. Desactivar el plugin NO activa esto, "
+"solo lo hace la desinstalación."
+
+#: includes/admin-page.php:923
+msgid "Strongly recommended: export the full log to CSV before uninstalling."
+msgstr ""
+"Muy recomendable: exporta el registro completo a CSV antes de desinstalar."
+
+#: includes/admin-page.php:925
+msgid "Export now"
+msgstr "Exportar ahora"
+
+#: includes/admin-page.php:935
+msgid "Save settings"
+msgstr "Guardar ajustes"
+
+#: includes/certificate-pdf.php:55
+msgid "Missing record ID."
+msgstr "Falta el ID del registro."
+
+#: includes/certificate-pdf.php:63
+msgid "Record not found."
+msgstr "Registro no encontrado."
+
+#: includes/certificate-pdf.php:88
+#, php-format
+msgid "Consent certificate #%d"
+msgstr "Certificado de consentimiento #%d"
+
+#: includes/certificate-pdf.php:246
+msgid "Back to records"
+msgstr "Volver a los registros"
+
+#: includes/certificate-pdf.php:247
+msgid "Print / Save as PDF"
+msgstr "Imprimir / Guardar como PDF"
+
+#: includes/certificate-pdf.php:255
+msgid "Certificate of consent"
+msgstr "Certificado de consentimiento"
+
+#: includes/certificate-pdf.php:256
+msgid "Article 7.1 GDPR — proof of explicit consent"
+msgstr "Artículo 7.1 RGPD — Prueba del consentimiento explícito"
+
+#: includes/certificate-pdf.php:259
+msgid "Record"
+msgstr "Registro"
+
+#: includes/certificate-pdf.php:262
+msgid "Record ID"
+msgstr "ID del registro"
+
+#: includes/certificate-pdf.php:263 includes/export-csv.php:34
+#: includes/privacy-tools.php:63
+msgid "Recorded at (UTC)"
+msgstr "Registrado el (UTC)"
+
+#: includes/certificate-pdf.php:265 includes/export-csv.php:25
+msgid "User ID"
+msgstr "ID del usuario"
+
+#: includes/certificate-pdf.php:266 includes/export-csv.php:24
+#: includes/privacy-tools.php:79
+msgid "Order ID"
+msgstr "ID del pedido"
+
+#: includes/certificate-pdf.php:267 includes/export-csv.php:27
+msgid "Consent type"
+msgstr "Tipo de consentimiento"
+
+#: includes/certificate-pdf.php:269 includes/export-csv.php:31
+#: includes/order-metabox.php:54 includes/privacy-tools.php:75
+msgid "Accepted"
+msgstr "Aceptado"
+
+#: includes/certificate-pdf.php:269 includes/export-csv.php:134
+#: includes/privacy-tools.php:76
+msgid "Yes"
+msgstr "Sí"
+
+#: includes/certificate-pdf.php:269 includes/export-csv.php:135
+#: includes/privacy-tools.php:76
+msgid "No"
+msgstr "No"
+
+#: includes/certificate-pdf.php:277 includes/export-csv.php:29
+#: includes/privacy-tools.php:91
+msgid "Accepted text"
+msgstr "Texto aceptado"
+
+#: includes/certificate-pdf.php:282 includes/export-csv.php:30
+#: includes/privacy-tools.php:95
+msgid "Integrity seal (SHA-256)"
+msgstr "Sello de integridad (SHA-256)"
+
+#: includes/certificate-pdf.php:287
+msgid ""
+"This record predates the integrity-sealing feature; no seal is available."
+msgstr ""
+"Este registro es anterior a la función de sellado; no tiene sello disponible."
+
+#: includes/certificate-pdf.php:289 includes/order-metabox.php:78
+msgid "Verified"
+msgstr "Verificado"
+
+#: includes/certificate-pdf.php:290
+msgid ""
+"The hash above matches the stored accepted text. Any later edit would break "
+"the seal and invalidate this certificate."
+msgstr ""
+"El hash de arriba coincide con el texto aceptado guardado. Cualquier "
+"modificación posterior rompería el sello e invalidaría este certificado."
+
+#: includes/certificate-pdf.php:293
+msgid ""
+"The hash does NOT match the stored accepted text. The record has been "
+"altered after it was sealed."
+msgstr ""
+"El hash NO coincide con el texto aceptado guardado. El registro ha sido "
+"modificado después de sellarse."
+
+#: includes/certificate-pdf.php:296
+msgid "This is a cryptographic integrity check, not an electronic signature."
+msgstr ""
+"Es una comprobación criptográfica de integridad, no una firma electrónica."
+
+#. translators: 1: site URL, 2: generation timestamp UTC.
+#: includes/certificate-pdf.php:304
+#, php-format
+msgid "Generated by %1$s on %2$s UTC."
+msgstr "Generado por %1$s el %2$s UTC."
+
+#: includes/checkout.php:62 includes/checkout.php:67
+msgid "I have read and agree to the website terms and conditions."
+msgstr ""
+"He leído y estoy de acuerdo con los términos y condiciones del sitio web."
+
+#: includes/checkout.php:72
+msgid "terms and conditions"
+msgstr "términos y condiciones"
+
+#: includes/class-tccl-promo-banner.php:58
+msgid "Complete WordPress security"
+msgstr "Seguridad completa para WordPress"
+
+#: includes/class-tccl-promo-banner.php:59
+msgid ""
+"All-in-one security plugin: firewall, login protection, security headers, "
+"2FA, file integrity monitoring, and activity logging."
+msgstr ""
+"Plugin de seguridad todo en uno: firewall, protección de acceso, cabeceras "
+"de seguridad, 2FA, monitorización de integridad de archivos y registro de "
+"actividad."
+
+#: includes/class-tccl-promo-banner.php:60
+msgid "Install Vigilante"
+msgstr "Instalar Vigilante"
+
+#: includes/class-tccl-promo-banner.php:64
+msgid "Restrict site access"
+msgstr "Restringe el acceso a tu sitio"
+
+#: includes/class-tccl-promo-banner.php:65
+msgid ""
+"Force visitors to log in before accessing your site with extensive exception "
+"controls for pages, posts, and user roles."
+msgstr ""
+"Fuerza a los visitantes a iniciar sesión antes de poder acceder a tu sitio, "
+"con amplios controles de excepciones para páginas, entradas y perfiles de "
+"usuario."
+
+#: includes/class-tccl-promo-banner.php:66
+msgid "Install Gozer"
+msgstr "Instalar Gozer"
+
+#: includes/class-tccl-promo-banner.php:70
+msgid "Monitor AI crawler activity"
+msgstr "Monitoriza la actividad de rastreadores IA"
+
+#: includes/class-tccl-promo-banner.php:71
+msgid ""
+"Track which AI bots visit your site, analyze their behavior, and take "
+"control with blocking rules and robots.txt management."
+msgstr ""
+"Controla qué bots de IA visitan ti web, analiza su comportamiento y toma el "
+"control con reglas de bloqueo y gestión de robots.txt."
+
+#: includes/class-tccl-promo-banner.php:72
+msgid "Install VigIA"
+msgstr "Instalar VigIA"
+
+#: includes/class-tccl-promo-banner.php:76
+msgid "Boost your AI presence"
+msgstr "Refuerza tu presencia en la IA"
+
+#: includes/class-tccl-promo-banner.php:77
+msgid ""
+"Add social sharing and AI summarize buttons. Help visitors share your "
+"content and let AIs learn from your site while getting backlinks."
+msgstr ""
+"Añade botones para compartir en redes sociales y resumir con IA. Ayuda a los "
+"visitantes a compartir tu contenido y deja que las IA aprendan de tu sitio "
+"web mientras obtienes enlaces entrantes."
+
+#: includes/class-tccl-promo-banner.php:78
+msgid "Install AI Share & Summarize"
+msgstr "Instalar AI Share & Summarize"
+
+#: includes/class-tccl-promo-banner.php:82
+msgid "Control AI content usage"
+msgstr "Controla como la IA usa tu contenido"
+
+#: includes/class-tccl-promo-banner.php:83
+msgid ""
+"Cloudflare-endorsed plugin to define how AI systems can use your content: "
+"for training, search results, or both."
+msgstr ""
+"Plugin avalado por Cloudflare para definir cómo los sistemas de IA pueden "
+"utilizar tu contenido: para entrenamiento, resultados de búsqueda o ambos."
+
+#: includes/class-tccl-promo-banner.php:84
+msgid "Install AI Content Signals"
+msgstr "Instalar AI Content Signals"
+
+#: includes/class-tccl-promo-banner.php:88
+msgid "Speed up your WordPress"
+msgstr "Acelera tu WordPress"
+
+#: includes/class-tccl-promo-banner.php:89
+msgid ""
+"Comprehensive performance optimizations: critical CSS, lazy loading, cache "
+"rules, and 30+ tweaks with zero configuration."
+msgstr ""
+"Optimizaciones integrales de rendimiento: CSS crítico, carga diferida, "
+"reglas de caché y más de 30 ajustes sin necesidad de configuración."
+
+#: includes/class-tccl-promo-banner.php:90
+msgid "Install Zero Config Performance"
+msgstr "Instalar Zero Config Performance"
+
+#: includes/class-tccl-promo-banner.php:94
+msgid "Back to Classic Editor"
+msgstr "Vuelve al editor clásico"
+
+#: includes/class-tccl-promo-banner.php:95
+msgid ""
+"Completely remove Gutenberg, FSE styles, and block widgets. Restore the "
+"classic editing experience with better performance."
+msgstr ""
+"Elimina por completo Gutenberg, los estilos FSE y los widgets de bloques. "
+"Recupera la experiencia de edición clásica con un mejor rendimiento."
+
+#: includes/class-tccl-promo-banner.php:96
+msgid "Install No Gutenberg"
+msgstr "Instalar No Gutenberg"
+
+#: includes/class-tccl-promo-banner.php:100
+msgid "Development toolkit"
+msgstr "Kit de herramientas para desarrollo"
+
+#: includes/class-tccl-promo-banner.php:101
+msgid ""
+"Bypass all caching during development. Auto-detects cache plugins, enables "
+"debug mode, and includes maintenance screen."
+msgstr ""
+"Desactiva todas la cachés mientas desarrollas. Detecta automáticamente los "
+"plugins de caché, activa el modo de debug e incluye una pantalla de "
+"mantenimiento."
+
+#: includes/class-tccl-promo-banner.php:102
+msgid "Install Anti-Cache Kit"
+msgstr "Instalar Kit Anti-Caché"
+
+#: includes/class-tccl-promo-banner.php:106
+msgid "Fix customer names"
+msgstr "Arregla los nombres de clientes"
+
+#: includes/class-tccl-promo-banner.php:107
+msgid ""
+"Auto-capitalize names and addresses in WordPress and WooCommerce. Keep "
+"invoices and reports professionally formatted."
+msgstr ""
+"Capitaliza automáticamente nombres y direcciones en WordPress y WooCommerce. "
+"Mantén las facturas y los informes con un formato profesional."
+
+#: includes/class-tccl-promo-banner.php:108
+msgid "Install Auto Capitalize"
+msgstr "Instalar Auto Capitalize"
+
+#: includes/class-tccl-promo-banner.php:112
+msgid "Clean Action Scheduler"
+msgstr "Limpia el programador de acciones"
+
+#: includes/class-tccl-promo-banner.php:113
+msgid ""
+"Remove millions of completed, failed, and old actions from WooCommerce "
+"Action Scheduler. Reduce database size instantly."
+msgstr ""
+"Elimina millones de acciones completadas, fallidas y antiguas del "
+"programador de acciones de WooCommerce. Reduce el tamaño de la base de datos "
+"al instante."
+
+#: includes/class-tccl-promo-banner.php:114
+msgid "Install Scheduler Cleaner"
+msgstr "Instalar Scheduler Cleaner"
+
+#: includes/class-tccl-promo-banner.php:118
+msgid "Automatic SEO meta tags"
+msgstr "Etiquetas meta SEO automáticas"
+
+#: includes/class-tccl-promo-banner.php:119
+msgid ""
+"Title, meta description, Open Graph, Twitter Card and JSON-LD schema from "
+"native WordPress fields. No heavy SEO plugin needed."
+msgstr ""
+"Title, meta description, Open Graph, Twitter Card y JSON-LD schema desde los "
+"campos nativos de WordPress. Sin plugin SEO pesado."
+
+#: includes/class-tccl-promo-banner.php:120
+msgid "Install Native SEO Meta Tags"
+msgstr "Instalar Native SEO Meta Tags"
+
+#: includes/class-tccl-promo-banner.php:124
+msgid "Customize your sitemap"
+msgstr "Personaliza tu mapa del sitio"
+
+#: includes/class-tccl-promo-banner.php:125
+msgid ""
+"Control WordPress native sitemap: exclude post types, taxonomies, specific "
+"posts, and authors. No bloat, just options."
+msgstr ""
+"Controla el mapa del sitio nativo de WordPress: excluye tipos de contenido, "
+"taxonomías, publicaciones específicas y autores. Sin extras innecesarios, "
+"solo opciones."
+
+#: includes/class-tccl-promo-banner.php:126
+msgid "Install Sitemap Customizer"
+msgstr "Instalar Sitemap Customizer"
+
+#: includes/class-tccl-promo-banner.php:130
+msgid "Control search indexing"
+msgstr "Controla el indexado en los motores de búsqueda"
+
+#: includes/class-tccl-promo-banner.php:131
+msgid ""
+"Tell search engines what not to index. Apply noindex per post, page, or "
+"entire post types with simple override controls."
+msgstr ""
+"Di a los motores de búsqueda qué no indexar. Aplica «noindex» por entrada, "
+"página o a tipos de contenido completos con omisión individual."
+
+#: includes/class-tccl-promo-banner.php:132
+msgid "Install NoIndexer"
+msgstr "Instalar NoIndexer"
+
+#: includes/class-tccl-promo-banner.php:136
+msgid "Control post visibility"
+msgstr "Visibilidad de publicaciones"
+
+#: includes/class-tccl-promo-banner.php:137
+msgid ""
+"Hide posts from homepage, archives, feeds, or REST API while keeping them "
+"accessible via direct URL."
+msgstr ""
+"Oculta publicaciones de la página de inicio, archivos, feeds o API REST, "
+"manteniendo el acceso a ellas a través de la URL directa."
+
+#: includes/class-tccl-promo-banner.php:138
+msgid "Install Post Visibility"
+msgstr "Instalar Post Visibility"
+
+#: includes/class-tccl-promo-banner.php:142
+msgid "Smart widget display"
+msgstr "Visualización inteligente de widgets"
+
+#: includes/class-tccl-promo-banner.php:143
+msgid ""
+"Show or hide widgets based on pages, post types, categories, user roles, and "
+"more. Works with any theme."
+msgstr ""
+"Muestra u oculta widgets según las páginas, los tipos de contenido, las "
+"categorías, los perfiles de usuario y mucho más. Funciona con cualquier tema."
+
+#: includes/class-tccl-promo-banner.php:144
+msgid "Install Widget Visibility"
+msgstr "Instalar Widget Visibility"
+
+#: includes/class-tccl-promo-banner.php:148
+msgid "Search & replace in blocks"
+msgstr "Busca y reemplaza en bloques"
+
+#: includes/class-tccl-promo-banner.php:149
+msgid ""
+"Find and replace text across all your Gutenberg blocks. Bulk edit content "
+"without touching the database directly."
+msgstr ""
+"Busca y reemplaza texto en todos tus bloques Gutenberg. Edita contenidos en "
+"lotes sin tocar directamente la base de datos."
+
+#: includes/class-tccl-promo-banner.php:150
+msgid "Install Search Replace Blocks"
+msgstr "Instalar Search Replace Blocks"
+
+#: includes/class-tccl-promo-banner.php:154
+msgid "Better read more links"
+msgstr "Mejores enlaces de leer más"
+
+#: includes/class-tccl-promo-banner.php:155
+msgid ""
+"Customize excerpt \"read more\" links with buttons, custom text, and "
+"nofollow option. Improve CTR and SEO."
+msgstr ""
+"Personaliza los enlaces «Leer más» de los extractos con botones, texto "
+"personalizado y opción nofollow. Mejora el CTR y el SEO."
+
+#: includes/class-tccl-promo-banner.php:156
+msgid "Install SEO Read More"
+msgstr "Instalar SEO Read More"
+
+#: includes/class-tccl-promo-banner.php:160
+msgid "Cleaner variable prices"
+msgstr "Precios variables más claros"
+
+#: includes/class-tccl-promo-banner.php:161
+msgid ""
+"Display only the lowest price for WooCommerce variable products instead of "
+"confusing price ranges."
+msgstr ""
+"Muestra solo el precio más bajo para los productos variables de WooCommerce "
+"en lugar de rangos de precios confusos."
+
+#: includes/class-tccl-promo-banner.php:162
+msgid "Install Lowest Price"
+msgstr "Instalar Lowest Price"
+
+#: includes/class-tccl-promo-banner.php:166
+msgid "Schedule sale prices"
+msgstr "Programa precios de oferta"
+
+#: includes/class-tccl-promo-banner.php:167
+msgid ""
+"Set multiple future sale prices for WooCommerce products. Plan promotions in "
+"advance with start and end dates."
+msgstr ""
+"Configura múltiples precios de venta futuros para productos de WooCommerce. "
+"Planifica promociones con antelación con fechas de inicio y finalización."
+
+#: includes/class-tccl-promo-banner.php:168
+msgid "Install Sale Scheduler"
+msgstr "Instalar Sale Scheduler"
+
+#: includes/class-tccl-promo-banner.php:172
+msgid "Simplify store management"
+msgstr "Simplifica la gestión de tu tienda"
+
+#: includes/class-tccl-promo-banner.php:173
+msgid ""
+"Clean up WordPress admin for Store Managers. Hide unnecessary menus, keep "
+"only orders, products, and customers, plus quick access shortcuts."
+msgstr ""
+"Optimiza la administración de WordPress para los gestores de tienda. Oculta "
+"menús innecesarios, deja solo pedidos, productos y clientes, además de "
+"enlaces directos de acceso rápido."
+
+#: includes/class-tccl-promo-banner.php:174
+msgid "Install Easy Store"
+msgstr "Instalar Easy Store"
+
+#: includes/class-tccl-promo-banner.php:178
+msgid "Lightbox for Divi"
+msgstr "Caja de luz para Divi"
+
+#: includes/class-tccl-promo-banner.php:179
+msgid ""
+"Add native lightbox functionality to Divi theme images. No jQuery, fast "
+"loading, fully customizable."
+msgstr ""
+"Añade la funcionalidad nativa de caja de luz a las imágenes del tema Divi. "
+"Sin jQuery, carga rápida, totalmente personalizable."
+
+#: includes/class-tccl-promo-banner.php:180
+msgid "Install Divi Lightbox"
+msgstr "Instalar Divi Lightbox"
+
+#: includes/class-tccl-promo-banner.php:184
+msgid "Show visitors what is coming up next"
+msgstr "Muestra a los visitantes lo que se publicará próximamente"
+
+#: includes/class-tccl-promo-banner.php:185
+msgid ""
+"Display your scheduled and future posts on the frontend to gain and retain "
+"visits."
+msgstr ""
+"Muestra tus entradas programadas y futuras en la parte visible de la web "
+"para conseguir y retener visitas."
+
+#: includes/class-tccl-promo-banner.php:186
+msgid "Install Scheduled Posts Showcase"
+msgstr "Instalar entradas programadas"
+
+#: includes/class-tccl-promo-banner.php:190
+msgid "Custom Dashboard News"
+msgstr "Noticas personalizadas en el escritorio"
+
+#: includes/class-tccl-promo-banner.php:191
+msgid ""
+"Add your own custom feeds and links to the news and events dashboard widget "
+"and replace WordPress default one."
+msgstr ""
+"Añade tus propios feeds personalizados y enlaces al widget de escritorio de "
+"noticias y eventos, y reemplaza el que viene por defecto con WordPress."
+
+#: includes/class-tccl-promo-banner.php:192
+msgid "Install Periscope"
+msgstr "Instalar Periscopio"
+
+#: includes/class-tccl-promo-banner.php:206
+msgid "Need help with your website?"
+msgstr "¿Necesitas ayuda con tu web?"
+
+#: includes/class-tccl-promo-banner.php:207
+msgid ""
+"Professional WordPress maintenance: security monitoring, regular backups, "
+"performance optimization, and priority support."
+msgstr ""
+"Mantenimiento WordPress profesional: monitorización de seguridad, backups "
+"periódicos, optimización del rendimiento y soporte preferente."
+
+#: includes/class-tccl-promo-banner.php:208
+#: includes/class-tccl-promo-banner.php:236
+msgid "Learn more"
+msgstr "Más información"
+
+#: includes/class-tccl-promo-banner.php:213
+msgid "WordPress consultancy"
+msgstr "Consultoría WordPress"
+
+#: includes/class-tccl-promo-banner.php:214
+msgid ""
+"One-on-one online sessions to solve your WordPress doubts, get expert "
+"advice, and make better decisions for your project."
+msgstr ""
+"Sesiones online personalizadas para resolver tus dudas sobre WordPress, "
+"obtener asesoramiento experto y tomar las mejores decisiones para tu "
+"proyecto."
+
+#: includes/class-tccl-promo-banner.php:215
+msgid "Book a session"
+msgstr "Reserva una sesión"
+
+#: includes/class-tccl-promo-banner.php:220
+msgid "Hacked website?"
+msgstr "¿Han hackeado tu web?"
+
+#: includes/class-tccl-promo-banner.php:221
+msgid ""
+"Fast recovery service for compromised WordPress sites. We clean malware, fix "
+"vulnerabilities, and restore your site security."
+msgstr ""
+"Servicio rápido de recuperación de sitios WordPress comprometidos. Limpiamos "
+"malware, corregimos vulnerabilidades restauramos la seguridad de tu sitio."
+
+#: includes/class-tccl-promo-banner.php:222
+msgid "Get help now"
+msgstr "Consigue ayuda ya"
+
+#: includes/class-tccl-promo-banner.php:227
+msgid "Custom development"
+msgstr "Desarrollo personalizado"
+
+#: includes/class-tccl-promo-banner.php:228
+msgid ""
+"Need a custom plugin, theme modifications, or specific functionality? We "
+"build tailored WordPress solutions for your needs."
+msgstr ""
+"¿Necesitas un plugin personalizado, modificaciones en un tema o una "
+"funcionalidad específica? Creamos soluciones WordPress a medida de tus "
+"necesidades."
+
+#: includes/class-tccl-promo-banner.php:229
+msgid "Request a quote"
+msgstr "Solicita un presupuesto"
+
+#: includes/class-tccl-promo-banner.php:234
+msgid "Hosting built for WordPress"
+msgstr "Alojamiento web creado para WordPress"
+
+#: includes/class-tccl-promo-banner.php:235
+msgid ""
+"Google Cloud servers, automatic geo-located daily backups, and 24/7 expert "
+"support. Speed, security, and migration tools included."
+msgstr ""
+"Servidores de Google Cloud, copias de seguridad diarias automáticas con "
+"geolocalización y soporte técnico especializado 24/7. Velocidad, seguridad y "
+"herramientas de migración incluidas."
+
+#. translators: SiteGround affiliate URL. Change this URL in translations to use a localized landing page.
+#: includes/class-tccl-promo-banner.php:238
+msgid "https://stgrnd.co/telladowpbox"
+msgstr "https://stgrnd.co/telladowpbox"
+
+#: includes/class-tccl-promo-banner.php:289
+msgid "Starter kit for your site"
+msgstr "Kit de inicio para tu sitio"
+
+#: includes/emails.php:46
+msgid "Terms accepted"
+msgstr "Términos aceptados"
+
+#: includes/emails.php:46
+msgid "Terms NOT accepted"
+msgstr "Términos NO aceptados"
+
+#: includes/emails.php:71 includes/order-metabox.php:103
+msgid "View record"
+msgstr "Ver registro"
+
+#: includes/export-csv.php:48
+msgid "Email starts with"
+msgstr "Correo electrónico empieza por"
+
+#: includes/export-csv.php:51
+msgid "Order # starts with"
+msgstr "Pedido nº empieza por"
+
+#: includes/export-csv.php:62
+msgid "None (full export)"
+msgstr "Ninguno (exportación completa)"
+
+#: includes/export-csv.php:113
+msgid "Site"
+msgstr "Sitio"
+
+#: includes/export-csv.php:114
+msgid "Site URL"
+msgstr "URL del sitio"
+
+#: includes/export-csv.php:115
+msgid "Exported at (UTC)"
+msgstr "Exportado el (UTC)"
+
+#: includes/export-csv.php:116
+msgid "Filter applied"
+msgstr "Filtro aplicado"
+
+#: includes/export-csv.php:117
+msgid "Total records"
+msgstr "Total de registros"
+
+#: includes/order-metabox.php:21
+msgid "Consent record"
+msgstr "Registro del consentimiento"
+
+#: includes/order-metabox.php:52
+msgid "Terms &amp; privacy:"
+msgstr "Términos y privacidad:"
+
+#: includes/order-metabox.php:56
+msgid "Not accepted"
+msgstr "No aceptado"
+
+#: includes/order-metabox.php:69
+msgid "Recorded at"
+msgstr "Registrado el"
+
+#: includes/order-metabox.php:76
+msgid "Unsealed"
+msgstr "Sin sello"
+
+#: includes/order-metabox.php:88
+msgid "View accepted text"
+msgstr "Ver el texto aceptado"
+
+#: includes/order-metabox.php:107
+msgid "Download PDF"
+msgstr "Descargar PDF"
+
+#: includes/order-metabox.php:125
+msgid "Consent"
+msgstr "Consentimiento"
+
+#: includes/order-metabox.php:175
+msgid "No data (placed before plugin activation)"
+msgstr "Sin datos (pedido anterior a la activación del plugin)"
+
+#: includes/privacy-tools.php:27 includes/privacy-tools.php:125
+msgid "Terms & Conditions Consent Log"
+msgstr "Registro de consentimientos de términos y condiciones"
+
+#: includes/privacy-tools.php:188
+#, php-format
+msgid ""
+"%d consent record was anonymised. The record itself is kept as evidence of "
+"lawful processing."
+msgid_plural ""
+"%d consent records were anonymised. The records themselves are kept as "
+"evidence of lawful processing."
+msgstr[0] ""
+"Se anonimizó %d registro de consentimiento. El registro en sí se conserva "
+"como prueba de tratamiento lícito."
+msgstr[1] ""
+"Se anonimizaron %d registros de consentimiento. Los registros en sí se "
+"conservan como prueba de tratamiento lícito."
+
+#, php-format
+#~ msgid "%d record found."
+#~ msgid_plural "%d records found."
+#~ msgstr[0] "%d registro encontrado."
+#~ msgstr[1] "%d registros encontrados."
+
+#~ msgid ""
+#~ "Recomputes the SHA-256 hash of every stored record and compares it to its "
+#~ "sealed hash. Reports how many are intact, tampered or unsealed (legacy). "
+#~ "Use it after restoring a database backup or when something looks off."
+#~ msgstr ""
+#~ "Recalcula el hash SHA-256 de cada registro guardado y lo compara con el "
+#~ "sello almacenado. Informa de cuántos están íntegros, alterados o sin "
+#~ "sello (anteriores). Útil tras restaurar una copia de seguridad de la base "
+#~ "de datos o si algo parece raro."
+
+#~ msgid ""
+#~ "Both texts below are optional. Whatever the customer is actually shown — "
+#~ "your custom text or the WooCommerce native one — is exactly what gets "
+#~ "stored with each consent record."
+#~ msgstr ""
+#~ "Los dos textos de abajo son opcionales. Lo que de verdad ve el cliente —"
+#~ "tu texto personalizado o el nativo de WooCommerce— es exactamente lo que "
+#~ "se guarda en cada registro de consentimiento."
+
+#~ msgid ""
+#~ "When you change your terms text, you tag the new wording with a version "
+#~ "number. Orders placed from then on are sealed with the new version. Older "
+#~ "records keep the version they signed — they are never modified. That way "
+#~ "you can prove exactly which text each customer accepted, even after you "
+#~ "have revised your terms many times."
+#~ msgstr ""
+#~ "Cada vez que cambias el texto de tus términos, le pones un número de "
+#~ "versión nuevo. Los pedidos que se hagan a partir de ese momento se sellan "
+#~ "con la versión nueva. Los registros antiguos conservan la versión que "
+#~ "firmaron y nunca se modifican. Así puedes demostrar exactamente qué texto "
+#~ "aceptó cada cliente, aunque hayas revisado tus términos muchas veces."
+
+#~ msgid ""
+#~ "Records that no longer match the current version show an \"Outdated\" "
+#~ "badge in the records list. That does not mean they are invalid — it just "
+#~ "means their text belongs to a previous version."
+#~ msgstr ""
+#~ "Los registros que ya no coinciden con la versión actual se muestran con "
+#~ "un aviso \"Obsoleto\" en el listado. Eso no significa que sean inválidos, "
+#~ "solo que su texto pertenece a una versión anterior."
+
+#~ msgid ""
+#~ "IP and user-agent are evidence factors that strengthen the proof of "
+#~ "consent. They are not strictly required by GDPR, but the data protection "
+#~ "authority typically considers a record more credible when these are "
+#~ "present."
+#~ msgstr ""
+#~ "La IP y el user-agent son factores que refuerzan la prueba del "
+#~ "consentimiento. El RGPD no los exige estrictamente, pero la autoridad de "
+#~ "protección de datos suele considerar más creíble un registro cuando están "
+#~ "presentes."
+
+#~ msgid ""
+#~ "Removes PII (email, IP, user agent) from records older than the retention "
+#~ "period above. The records themselves are kept as evidence of lawful "
+#~ "processing — that is the GDPR-friendly approach: anonymise, do not delete "
+#~ "the proof of consent."
+#~ msgstr ""
+#~ "Elimina los datos personales (correo, IP, user-agent) de los registros "
+#~ "más antiguos que el periodo de retención de arriba. Los registros se "
+#~ "conservan como prueba de tratamiento lícito: ese es el enfoque RGPD-"
+#~ "friendly, anonimizar y no borrar la prueba del consentimiento."
+
+#~ msgid ""
+#~ "Both options are off by default. Enable them only if you want WooCommerce "
+#~ "order emails to mention the consent record. Optional in every sense — "
+#~ "neither is required by GDPR; the record itself is the legal evidence."
+#~ msgstr ""
+#~ "Las dos opciones están desactivadas por defecto. Actívalas solo si "
+#~ "quieres que los emails de pedido de WooCommerce mencionen el registro del "
+#~ "consentimiento. Opcionales en todos los sentidos: el RGPD no las exige; "
+#~ "la prueba legal es el propio registro."
+
+#~ msgid "Order #"
+#~ msgstr "Pedido nº"
+
+#~ msgid "123"
+#~ msgstr "123"
+
+#~ msgid "Filter"
+#~ msgstr "Filtrar"
+
+#~ msgid ""
+#~ "Both fields are optional. Leave them empty to use the WooCommerce native "
+#~ "terms checkbox text and to skip the informational paragraph above the "
+#~ "checkbox. Whatever the customer is shown is exactly what gets stored with "
+#~ "each consent record."
+#~ msgstr ""
+#~ "Ambos campos son opcionales. Déjalos vacíos para usar el texto nativo de "
+#~ "la casilla de términos de WooCommerce y para no mostrar el párrafo "
+#~ "informativo encima de la casilla. Lo que vea el cliente es exactamente lo "
+#~ "que se guarda con cada registro de consentimiento."
+
+#~ msgid ""
+#~ "Optional. Leave empty to keep the WooCommerce native text (shown as the "
+#~ "placeholder above). If you fill it, basic HTML is allowed (links, strong, "
+#~ "em)."
+#~ msgstr ""
+#~ "Opcional. Déjalo vacío para conservar el texto nativo de WooCommerce (se "
+#~ "muestra como placeholder arriba). Si lo rellenas, se permite HTML básico "
+#~ "(enlaces, strong, em)."
+
+#~ msgid ""
+#~ "Optional. Shown above the terms checkbox at checkout. Useful for the GDPR "
+#~ "notice (controller, purpose, legal basis, recipients, rights). Leave "
+#~ "empty to disable."
+#~ msgstr ""
+#~ "Opcional. Se muestra encima la casilla de de términos en al finalizar "
+#~ "compra. Útil para el aviso RGPD (responsable, finalidad, base legal, "
+#~ "destinatarios, derechos). Déjalo vacío para no mostrarlo."
+
+#~ msgid ""
+#~ "Format: MAJOR.MINOR-YYYY-MM-DD (e.g. 1.2-2026-05-09). Stored with each "
+#~ "consent so older records remain unambiguous after future revisions."
+#~ msgstr ""
+#~ "Formato: MAYOR.MENOR-AAAA-MM-DD (ej. 1.2-2026-05-09). Se guarda con cada "
+#~ "consentimiento para que los registros antiguos no queden ambiguos cuando "
+#~ "revises los textos en el futuro."
+
+#~ msgid ""
+#~ "If you only change the terms text and leave this version unchanged, the "
+#~ "plugin will bump it automatically."
+#~ msgstr ""
+#~ "Si solo cambias el texto de los términos y dejas esta versión sin tocar, "
+#~ "el plugin la subirá automáticamente."
+
+#~ msgid ""
+#~ "Read from REMOTE_ADDR. Forwarded headers are not trusted (they can be "
+#~ "spoofed without a verified reverse proxy)."
+#~ msgstr ""
+#~ "Se lee de REMOTE_ADDR. No se confía en cabeceras reenviadas (pueden "
+#~ "falsearse sin un proxy inverso verificado)."
+
+#~ msgid ""
+#~ "0 = indefinite. After this many days, records can be anonymised (PII "
+#~ "removed but record kept as proof of consent)."
+#~ msgstr ""
+#~ "0 = indefinido. Pasados estos días, los registros se pueden anonimizar "
+#~ "(se borran los datos personales pero se conserva el registro como prueba "
+#~ "del consentimiento)."
+
+#~ msgid ""
+#~ "Both options are off by default. Enable them only if you want WooCommerce "
+#~ "order emails to mention the consent record."
+#~ msgstr ""
+#~ "Ambas opciones están desactivadas por defecto. Actívalas solo si quieres "
+#~ "que los emails de pedido de WooCommerce mencionen el registro del "
+#~ "consentimiento."
+
+#~ msgid ""
+#~ "Every record is sealed with a SHA-256 hash of the exact text the customer "
+#~ "accepted, computed at write time. Any later change to the stored text "
+#~ "breaks the seal and is reported as TAMPERED in the records list. This is "
+#~ "not an electronic signature; it is a cryptographic integrity check that "
+#~ "supports the GDPR presumption of accountable processing."
+#~ msgstr ""
+#~ "Cada registro se sella con un hash SHA-256 del texto exacto que aceptó el "
+#~ "cliente, calculado en el momento del consentimiento. Cualquier cambio "
+#~ "posterior del texto guardado rompe el sello y se informa como ALTERADO en "
+#~ "el listado de registros. No es una firma electrónica, es una comprobación "
+#~ "criptográfica de integridad que respalda la presunción RGPD de "
+#~ "tratamiento responsable."
+
+#~ msgid ""
+#~ "Removes PII (email, IP, user agent) from records older than the retention "
+#~ "period. The records themselves are kept as evidence of lawful processing."
+#~ msgstr ""
+#~ "Borra los datos personales (correo electrónico, IP, user-agent) de los "
+#~ "registros más antiguos que el periodo de retención. Los registros se "
+#~ "conservan como prueba de tratamiento lícito."
+
+#~ msgid "Plugin status"
+#~ msgstr "Estado del plugin"
+
+#~ msgid "Last record"
+#~ msgstr "Último registro"
+
+#~ msgid "Outdated records"
+#~ msgstr "Registros obsoletos"
+
+#~ msgid ""
+#~ "Optional. Replaces the default WooCommerce terms checkbox text. Basic "
+#~ "HTML is allowed (links, strong, em)."
+#~ msgstr ""
+#~ "Opcional. Sustituye el texto de la casilla de términos por defecto de "
+#~ "WooCommerce. Se permite HTML básico (enlaces, strong, em)."
+
+#~ msgid "Source URL"
+#~ msgstr "URL de origen"
+
+#, php-format
+#~ msgid "I have read and agree to the website %s"
+#~ msgstr "He leído y estoy de acuerdo con %s del sitio web"
+
+#~ msgid "I have read and agree to the terms and conditions."
+#~ msgstr "He leído y estoy de acuerdo con los términos y condiciones."

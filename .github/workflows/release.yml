@@ -1,0 +1,64 @@
+name: Build plugin ZIP on release
+
+# Triggers
+# --------
+# 1. release.published — runs automatically when you publish a Release. The
+#    ZIP is attached to that Release as an Asset.
+# 2. workflow_dispatch — runs manually from the Actions tab. Useful while
+#    iterating on a release that has already been published: instead of
+#    deleting and recreating the Release, click "Run workflow" and the ZIP
+#    on the latest Release will be replaced with a fresh build of `main`.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo into the plugin slug folder
+        uses: actions/checkout@v4
+        with:
+          path: terms-conditions-consent-log
+
+      - name: Create release ZIP with the correct internal folder
+        run: |
+          zip -r terms-conditions-consent-log.zip terms-conditions-consent-log \
+            -x "*/.git/*" \
+            -x "*/.github/*" \
+            -x "*/.DS_Store" \
+            -x "*.DS_Store" \
+            -x "*/node_modules/*" \
+            -x "*/tests/*" \
+            -x "*/screenshots/*" \
+            -x "*/RELEASING.md" \
+            -x "*/.gitignore" \
+            -x "*/README.md" \
+            -x "*/*.zip"
+
+      - name: Attach ZIP to the just-published Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: terms-conditions-consent-log.zip
+
+      - name: Replace ZIP on the latest existing Release (manual run)
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          LATEST_TAG=$(gh release list --limit 1 --json tagName --jq '.[0].tagName')
+
+          if [ -z "$LATEST_TAG" ]; then
+            echo "No releases found in this repository. Publish one first or skip the manual run."
+            exit 1
+          fi
+
+          echo "Updating Release $LATEST_TAG with a freshly built ZIP."
+          gh release upload "$LATEST_TAG" terms-conditions-consent-log.zip --clobber

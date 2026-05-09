@@ -1,0 +1,1113 @@
+# Translation template for Terms & Conditions Consent Log.
+# Copyright (C) 2026 Fernando Tellado
+# This file is distributed under the same license as the Terms & Conditions Consent Log plugin.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Terms & Conditions Consent Log 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/fernandot/terms-conditions-consent-log/issues\n"
+"POT-Creation-Date: 2026-05-09 22:42+0200\n"
+"PO-Revision-Date: 2026-05-09 22:42+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: terms-conditions-consent-log\n"
+
+#: terms-conditions-consent-log.php:93 includes/admin-page.php:367
+msgid "Settings"
+msgstr ""
+
+#: includes/admin-page.php:18 includes/admin-page.php:19
+#: includes/privacy-tools.php:102
+msgid "Consent log"
+msgstr ""
+
+#: includes/admin-page.php:62 includes/admin-page.php:112
+#: includes/admin-page.php:143 includes/admin-page.php:181
+#: includes/admin-page.php:307 includes/certificate-pdf.php:50
+#: includes/export-csv.php:76
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/admin-page.php:65 includes/admin-page.php:116
+#: includes/admin-page.php:146 includes/admin-page.php:184
+#: includes/admin-page.php:311 includes/certificate-pdf.php:58
+#: includes/export-csv.php:79
+msgid "Security check failed."
+msgstr ""
+
+#: includes/admin-page.php:360
+msgid "Terms &amp; Conditions Consent Log"
+msgstr ""
+
+#: includes/admin-page.php:364
+msgid "Records"
+msgstr ""
+
+#. translators: %d: number of anonymised records.
+#: includes/admin-page.php:447
+#, php-format
+msgid "%d filtered record anonymised."
+msgid_plural "%d filtered records anonymised."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-page.php:458
+#, php-format
+msgid ""
+"Verified %1$d records · %2$d intact · %3$d tampered · %4$d unsealed (legacy)."
+msgstr ""
+
+#: includes/admin-page.php:474
+msgid "Email (starts with)"
+msgstr ""
+
+#: includes/admin-page.php:475
+msgid "customer@"
+msgstr ""
+
+#: includes/admin-page.php:479
+msgid "Order # (starts with)"
+msgstr ""
+
+#: includes/admin-page.php:480
+msgid "1234"
+msgstr ""
+
+#: includes/admin-page.php:484 includes/export-csv.php:54
+msgid "From"
+msgstr ""
+
+#: includes/admin-page.php:485 includes/admin-page.php:490
+msgid "YYYY-MM-DD"
+msgstr ""
+
+#: includes/admin-page.php:489 includes/export-csv.php:57
+msgid "To"
+msgstr ""
+
+#: includes/admin-page.php:495 includes/admin-page.php:568
+#: includes/export-csv.php:60 includes/privacy-tools.php:67
+msgid "Type"
+msgstr ""
+
+#: includes/admin-page.php:497
+msgid "Any"
+msgstr ""
+
+#: includes/admin-page.php:506
+msgid "Clear"
+msgstr ""
+
+#: includes/admin-page.php:508
+msgid "Export filtered to CSV"
+msgstr ""
+
+#: includes/admin-page.php:508
+msgid "Export all to CSV"
+msgstr ""
+
+#: includes/admin-page.php:515
+msgid ""
+"Anonymise all records that match the current filter? Records are kept; PII "
+"is scrubbed."
+msgstr ""
+
+#: includes/admin-page.php:520
+msgid "Anonymise filtered"
+msgstr ""
+
+#: includes/admin-page.php:534
+msgid "Verify integrity"
+msgstr ""
+
+#: includes/admin-page.php:538
+msgid ""
+"Recomputes every record's SHA-256 and compares it to the sealed hash. "
+"Reports intact, tampered and unsealed (legacy) totals."
+msgstr ""
+
+#: includes/admin-page.php:564 includes/export-csv.php:23
+msgid "ID"
+msgstr ""
+
+#: includes/admin-page.php:565
+msgid "Date (UTC)"
+msgstr ""
+
+#: includes/admin-page.php:566 includes/certificate-pdf.php:264
+#: includes/export-csv.php:26
+msgid "Email"
+msgstr ""
+
+#: includes/admin-page.php:567
+msgid "Order"
+msgstr ""
+
+#: includes/admin-page.php:569 includes/emails.php:60
+#: includes/order-metabox.php:61
+msgid "Version"
+msgstr ""
+
+#: includes/admin-page.php:570
+msgid "Status"
+msgstr ""
+
+#: includes/admin-page.php:571 includes/emails.php:51
+msgid "IP"
+msgstr ""
+
+#: includes/admin-page.php:572 includes/order-metabox.php:73
+msgid "Integrity"
+msgstr ""
+
+#: includes/admin-page.php:573
+msgid "Accepted text + SHA-256"
+msgstr ""
+
+#: includes/admin-page.php:574
+msgid "Actions"
+msgstr ""
+
+#: includes/admin-page.php:579
+msgid "No records match your filter."
+msgstr ""
+
+#: includes/admin-page.php:599
+msgid "YES"
+msgstr ""
+
+#: includes/admin-page.php:601
+msgid "no"
+msgstr ""
+
+#: includes/admin-page.php:604 includes/order-metabox.php:65
+msgid "Outdated"
+msgstr ""
+
+#: includes/admin-page.php:610
+msgid "unsealed"
+msgstr ""
+
+#: includes/admin-page.php:614
+msgid "Stored text does not match its sealed hash"
+msgstr ""
+
+#: includes/admin-page.php:614 includes/certificate-pdf.php:292
+#: includes/order-metabox.php:80
+msgid "TAMPERED"
+msgstr ""
+
+#: includes/admin-page.php:629
+msgid "Download PDF certificate"
+msgstr ""
+
+#. translators: %s: number of records (formatted).
+#: includes/admin-page.php:672
+#, php-format
+msgid "%s item"
+msgid_plural "%s items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-page.php:684
+msgid "First page"
+msgstr ""
+
+#: includes/admin-page.php:693
+msgid "Previous page"
+msgstr ""
+
+#: includes/admin-page.php:699
+msgid "Current page"
+msgstr ""
+
+#: includes/admin-page.php:702
+msgid "of"
+msgstr ""
+
+#: includes/admin-page.php:711
+msgid "Next page"
+msgstr ""
+
+#: includes/admin-page.php:720
+msgid "Last page"
+msgstr ""
+
+#: includes/admin-page.php:738
+msgid "Settings saved."
+msgstr ""
+
+#. translators: %d: number of anonymised records.
+#: includes/admin-page.php:746
+#, php-format
+msgid "%d record anonymised."
+msgid_plural "%d records anonymised."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin-page.php:756
+msgid "Checkout texts"
+msgstr ""
+
+#: includes/admin-page.php:758
+msgid ""
+"Both fields are optional. Whatever the customer is actually shown is what "
+"gets stored with each record."
+msgstr ""
+
+#: includes/admin-page.php:762
+msgid "Terms checkbox text"
+msgstr ""
+
+#: includes/admin-page.php:766
+msgid "Optional"
+msgstr ""
+
+#: includes/admin-page.php:767
+msgid ""
+"Replaces the text next to the terms checkbox in the checkout. Leave empty to "
+"use the WooCommerce native text (shown as the placeholder above). Basic HTML "
+"is allowed (links, strong, em)."
+msgstr ""
+
+#: includes/admin-page.php:769
+msgid ""
+"GDPR requires explicit consent — the customer must actively check the box. "
+"The plugin enforces nothing here; WooCommerce already does."
+msgstr ""
+
+#: includes/admin-page.php:774
+msgid "Pre-checkout informational text"
+msgstr ""
+
+#: includes/admin-page.php:776
+msgid ""
+"Example: We are the data controller for the data you provide here. Purpose: "
+"process your order. Recipients: shipping and payment providers. You can "
+"access, rectify and delete your data, more info in our privacy policy."
+msgstr ""
+
+#: includes/admin-page.php:778
+msgid "Optional, but legally relevant"
+msgstr ""
+
+#: includes/admin-page.php:779
+msgid ""
+"GDPR article 13 requires you to inform the data subject about the "
+"controller, the purpose, the legal basis, the recipients and their rights, "
+"before consent is collected. If your site does not show that information at "
+"checkout via another route, fill this field. If your privacy policy or "
+"another notice already does, you can leave it empty."
+msgstr ""
+
+#: includes/admin-page.php:785 includes/certificate-pdf.php:268
+#: includes/export-csv.php:28 includes/privacy-tools.php:71
+msgid "Document version"
+msgstr ""
+
+#: includes/admin-page.php:787
+msgid ""
+"A label for the current wording of your terms. Older records keep the "
+"version they signed and are never modified, so you can always prove which "
+"text each customer accepted. Records on a previous version show as "
+"\"Outdated\" — that is informative, not an error."
+msgstr ""
+
+#: includes/admin-page.php:791
+msgid "Current version"
+msgstr ""
+
+#: includes/admin-page.php:795
+msgid ""
+"Suggested format: MAJOR.MINOR-YYYY-MM-DD (e.g. 1.2-2026-05-09). What matters "
+"is that the string changes whenever your text changes."
+msgstr ""
+
+#. translators: %s: suggested next version.
+#: includes/admin-page.php:803
+#, php-format
+msgid "Bump version on save (suggestion: %s)."
+msgstr ""
+
+#: includes/admin-page.php:810
+msgid ""
+"You usually do not need to touch this field. If you change the terms text "
+"and forget to bump the version, the plugin bumps it automatically when you "
+"save."
+msgstr ""
+
+#: includes/admin-page.php:816
+msgid "Tracking and retention"
+msgstr ""
+
+#: includes/admin-page.php:818
+msgid ""
+"IP and user-agent are not required by GDPR, but they reinforce the "
+"credibility of each record."
+msgstr ""
+
+#: includes/admin-page.php:822 includes/certificate-pdf.php:270
+#: includes/export-csv.php:32 includes/privacy-tools.php:83
+msgid "IP address"
+msgstr ""
+
+#: includes/admin-page.php:826
+msgid "Record the client IP address"
+msgstr ""
+
+#: includes/admin-page.php:829 includes/admin-page.php:842
+msgid "Recommended"
+msgstr ""
+
+#: includes/admin-page.php:830
+msgid ""
+"Read from REMOTE_ADDR. Forwarded headers are not trusted (they can be "
+"spoofed without a verified reverse proxy). Disable only if your privacy "
+"policy says you do not log IPs."
+msgstr ""
+
+#: includes/admin-page.php:835 includes/certificate-pdf.php:271
+#: includes/export-csv.php:33 includes/privacy-tools.php:87
+msgid "User agent"
+msgstr ""
+
+#: includes/admin-page.php:839
+msgid "Record the browser user agent"
+msgstr ""
+
+#: includes/admin-page.php:843
+msgid ""
+"Reinforces evidence (helps spot automated submissions). Disable if your "
+"privacy policy says you do not log it."
+msgstr ""
+
+#: includes/admin-page.php:848
+msgid "Retention (days)"
+msgstr ""
+
+#: includes/admin-page.php:852
+msgid "GDPR requires you to define a retention period"
+msgstr ""
+
+#: includes/admin-page.php:853
+msgid ""
+"After this many days, records are eligible for anonymisation (PII removed "
+"but the record is kept as proof of consent). 0 = indefinite — only "
+"acceptable if you can justify it (e.g. statute of limitations for civil "
+"claims, typically 5 years in Spain)."
+msgstr ""
+
+#: includes/admin-page.php:859
+msgid "Anonymise old records"
+msgstr ""
+
+#: includes/admin-page.php:861
+msgid ""
+"Removes PII (email, IP, user-agent) from records older than the retention "
+"period. The records themselves are kept as proof of consent."
+msgstr ""
+
+#: includes/admin-page.php:869
+msgid ""
+"This will anonymise all records older than the retention period. Continue?"
+msgstr ""
+
+#: includes/admin-page.php:870
+msgid "Anonymise now"
+msgstr ""
+
+#: includes/admin-page.php:873
+msgid "Set a retention period above to enable this action."
+msgstr ""
+
+#: includes/admin-page.php:877
+msgid "Order emails"
+msgstr ""
+
+#: includes/admin-page.php:879
+msgid ""
+"Off by default. Not required by GDPR — the record itself is the legal "
+"evidence."
+msgstr ""
+
+#: includes/admin-page.php:883
+msgid "Admin email"
+msgstr ""
+
+#: includes/admin-page.php:887
+msgid "Show a consent line in the New order email (admin)"
+msgstr ""
+
+#: includes/admin-page.php:890
+msgid ""
+"Useful so the shop manager sees ✓ Terms accepted · version · IP at a glance, "
+"without opening each order. Recommended for shops with several people "
+"processing orders."
+msgstr ""
+
+#: includes/admin-page.php:895
+msgid "Customer email"
+msgstr ""
+
+#: includes/admin-page.php:899
+msgid "Show a consent line in the order confirmation email (customer)"
+msgstr ""
+
+#: includes/admin-page.php:902
+msgid ""
+"Reinforces transparency toward the customer. Some customers expect a "
+"confirmation that their acceptance was recorded; others may find it unusual. "
+"Off by default; turn it on if it fits your brand."
+msgstr ""
+
+#: includes/admin-page.php:908
+msgid "Uninstall"
+msgstr ""
+
+#: includes/admin-page.php:911
+msgid "On uninstall"
+msgstr ""
+
+#: includes/admin-page.php:915
+msgid "Delete all plugin data when the plugin is uninstalled"
+msgstr ""
+
+#: includes/admin-page.php:919
+msgid "This destroys consent evidence."
+msgstr ""
+
+#: includes/admin-page.php:920
+msgid ""
+"If this option is enabled, uninstalling the plugin will permanently drop the "
+"consent table and remove all settings. Only deactivating the plugin does NOT "
+"trigger this — uninstall does."
+msgstr ""
+
+#: includes/admin-page.php:923
+msgid "Strongly recommended: export the full log to CSV before uninstalling."
+msgstr ""
+
+#: includes/admin-page.php:925
+msgid "Export now"
+msgstr ""
+
+#: includes/admin-page.php:935
+msgid "Save settings"
+msgstr ""
+
+#: includes/certificate-pdf.php:55
+msgid "Missing record ID."
+msgstr ""
+
+#: includes/certificate-pdf.php:63
+msgid "Record not found."
+msgstr ""
+
+#: includes/certificate-pdf.php:88
+#, php-format
+msgid "Consent certificate #%d"
+msgstr ""
+
+#: includes/certificate-pdf.php:246
+msgid "Back to records"
+msgstr ""
+
+#: includes/certificate-pdf.php:247
+msgid "Print / Save as PDF"
+msgstr ""
+
+#: includes/certificate-pdf.php:255
+msgid "Certificate of consent"
+msgstr ""
+
+#: includes/certificate-pdf.php:256
+msgid "Article 7.1 GDPR — proof of explicit consent"
+msgstr ""
+
+#: includes/certificate-pdf.php:259
+msgid "Record"
+msgstr ""
+
+#: includes/certificate-pdf.php:262
+msgid "Record ID"
+msgstr ""
+
+#: includes/certificate-pdf.php:263 includes/export-csv.php:34
+#: includes/privacy-tools.php:63
+msgid "Recorded at (UTC)"
+msgstr ""
+
+#: includes/certificate-pdf.php:265 includes/export-csv.php:25
+msgid "User ID"
+msgstr ""
+
+#: includes/certificate-pdf.php:266 includes/export-csv.php:24
+#: includes/privacy-tools.php:79
+msgid "Order ID"
+msgstr ""
+
+#: includes/certificate-pdf.php:267 includes/export-csv.php:27
+msgid "Consent type"
+msgstr ""
+
+#: includes/certificate-pdf.php:269 includes/export-csv.php:31
+#: includes/order-metabox.php:54 includes/privacy-tools.php:75
+msgid "Accepted"
+msgstr ""
+
+#: includes/certificate-pdf.php:269 includes/export-csv.php:134
+#: includes/privacy-tools.php:76
+msgid "Yes"
+msgstr ""
+
+#: includes/certificate-pdf.php:269 includes/export-csv.php:135
+#: includes/privacy-tools.php:76
+msgid "No"
+msgstr ""
+
+#: includes/certificate-pdf.php:277 includes/export-csv.php:29
+#: includes/privacy-tools.php:91
+msgid "Accepted text"
+msgstr ""
+
+#: includes/certificate-pdf.php:282 includes/export-csv.php:30
+#: includes/privacy-tools.php:95
+msgid "Integrity seal (SHA-256)"
+msgstr ""
+
+#: includes/certificate-pdf.php:287
+msgid ""
+"This record predates the integrity-sealing feature; no seal is available."
+msgstr ""
+
+#: includes/certificate-pdf.php:289 includes/order-metabox.php:78
+msgid "Verified"
+msgstr ""
+
+#: includes/certificate-pdf.php:290
+msgid ""
+"The hash above matches the stored accepted text. Any later edit would break "
+"the seal and invalidate this certificate."
+msgstr ""
+
+#: includes/certificate-pdf.php:293
+msgid ""
+"The hash does NOT match the stored accepted text. The record has been "
+"altered after it was sealed."
+msgstr ""
+
+#: includes/certificate-pdf.php:296
+msgid "This is a cryptographic integrity check, not an electronic signature."
+msgstr ""
+
+#. translators: 1: site URL, 2: generation timestamp UTC.
+#: includes/certificate-pdf.php:304
+#, php-format
+msgid "Generated by %1$s on %2$s UTC."
+msgstr ""
+
+#: includes/checkout.php:62 includes/checkout.php:67
+msgid "I have read and agree to the website terms and conditions."
+msgstr ""
+
+#: includes/checkout.php:72
+msgid "terms and conditions"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:58
+msgid "Complete WordPress security"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:59
+msgid ""
+"All-in-one security plugin: firewall, login protection, security headers, "
+"2FA, file integrity monitoring, and activity logging."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:60
+msgid "Install Vigilante"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:64
+msgid "Restrict site access"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:65
+msgid ""
+"Force visitors to log in before accessing your site with extensive exception "
+"controls for pages, posts, and user roles."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:66
+msgid "Install Gozer"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:70
+msgid "Monitor AI crawler activity"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:71
+msgid ""
+"Track which AI bots visit your site, analyze their behavior, and take "
+"control with blocking rules and robots.txt management."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:72
+msgid "Install VigIA"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:76
+msgid "Boost your AI presence"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:77
+msgid ""
+"Add social sharing and AI summarize buttons. Help visitors share your "
+"content and let AIs learn from your site while getting backlinks."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:78
+msgid "Install AI Share & Summarize"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:82
+msgid "Control AI content usage"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:83
+msgid ""
+"Cloudflare-endorsed plugin to define how AI systems can use your content: "
+"for training, search results, or both."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:84
+msgid "Install AI Content Signals"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:88
+msgid "Speed up your WordPress"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:89
+msgid ""
+"Comprehensive performance optimizations: critical CSS, lazy loading, cache "
+"rules, and 30+ tweaks with zero configuration."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:90
+msgid "Install Zero Config Performance"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:94
+msgid "Back to Classic Editor"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:95
+msgid ""
+"Completely remove Gutenberg, FSE styles, and block widgets. Restore the "
+"classic editing experience with better performance."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:96
+msgid "Install No Gutenberg"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:100
+msgid "Development toolkit"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:101
+msgid ""
+"Bypass all caching during development. Auto-detects cache plugins, enables "
+"debug mode, and includes maintenance screen."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:102
+msgid "Install Anti-Cache Kit"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:106
+msgid "Fix customer names"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:107
+msgid ""
+"Auto-capitalize names and addresses in WordPress and WooCommerce. Keep "
+"invoices and reports professionally formatted."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:108
+msgid "Install Auto Capitalize"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:112
+msgid "Clean Action Scheduler"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:113
+msgid ""
+"Remove millions of completed, failed, and old actions from WooCommerce "
+"Action Scheduler. Reduce database size instantly."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:114
+msgid "Install Scheduler Cleaner"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:118
+msgid "Automatic SEO meta tags"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:119
+msgid ""
+"Title, meta description, Open Graph, Twitter Card and JSON-LD schema from "
+"native WordPress fields. No heavy SEO plugin needed."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:120
+msgid "Install Native SEO Meta Tags"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:124
+msgid "Customize your sitemap"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:125
+msgid ""
+"Control WordPress native sitemap: exclude post types, taxonomies, specific "
+"posts, and authors. No bloat, just options."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:126
+msgid "Install Sitemap Customizer"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:130
+msgid "Control search indexing"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:131
+msgid ""
+"Tell search engines what not to index. Apply noindex per post, page, or "
+"entire post types with simple override controls."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:132
+msgid "Install NoIndexer"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:136
+msgid "Control post visibility"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:137
+msgid ""
+"Hide posts from homepage, archives, feeds, or REST API while keeping them "
+"accessible via direct URL."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:138
+msgid "Install Post Visibility"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:142
+msgid "Smart widget display"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:143
+msgid ""
+"Show or hide widgets based on pages, post types, categories, user roles, and "
+"more. Works with any theme."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:144
+msgid "Install Widget Visibility"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:148
+msgid "Search & replace in blocks"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:149
+msgid ""
+"Find and replace text across all your Gutenberg blocks. Bulk edit content "
+"without touching the database directly."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:150
+msgid "Install Search Replace Blocks"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:154
+msgid "Better read more links"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:155
+msgid ""
+"Customize excerpt \"read more\" links with buttons, custom text, and "
+"nofollow option. Improve CTR and SEO."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:156
+msgid "Install SEO Read More"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:160
+msgid "Cleaner variable prices"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:161
+msgid ""
+"Display only the lowest price for WooCommerce variable products instead of "
+"confusing price ranges."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:162
+msgid "Install Lowest Price"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:166
+msgid "Schedule sale prices"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:167
+msgid ""
+"Set multiple future sale prices for WooCommerce products. Plan promotions in "
+"advance with start and end dates."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:168
+msgid "Install Sale Scheduler"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:172
+msgid "Simplify store management"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:173
+msgid ""
+"Clean up WordPress admin for Store Managers. Hide unnecessary menus, keep "
+"only orders, products, and customers, plus quick access shortcuts."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:174
+msgid "Install Easy Store"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:178
+msgid "Lightbox for Divi"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:179
+msgid ""
+"Add native lightbox functionality to Divi theme images. No jQuery, fast "
+"loading, fully customizable."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:180
+msgid "Install Divi Lightbox"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:184
+msgid "Show visitors what is coming up next"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:185
+msgid ""
+"Display your scheduled and future posts on the frontend to gain and retain "
+"visits."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:186
+msgid "Install Scheduled Posts Showcase"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:190
+msgid "Custom Dashboard News"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:191
+msgid ""
+"Add your own custom feeds and links to the news and events dashboard widget "
+"and replace WordPress default one."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:192
+msgid "Install Periscope"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:206
+msgid "Need help with your website?"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:207
+msgid ""
+"Professional WordPress maintenance: security monitoring, regular backups, "
+"performance optimization, and priority support."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:208
+#: includes/class-tccl-promo-banner.php:236
+msgid "Learn more"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:213
+msgid "WordPress consultancy"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:214
+msgid ""
+"One-on-one online sessions to solve your WordPress doubts, get expert "
+"advice, and make better decisions for your project."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:215
+msgid "Book a session"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:220
+msgid "Hacked website?"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:221
+msgid ""
+"Fast recovery service for compromised WordPress sites. We clean malware, fix "
+"vulnerabilities, and restore your site security."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:222
+msgid "Get help now"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:227
+msgid "Custom development"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:228
+msgid ""
+"Need a custom plugin, theme modifications, or specific functionality? We "
+"build tailored WordPress solutions for your needs."
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:229
+msgid "Request a quote"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:234
+msgid "Hosting built for WordPress"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:235
+msgid ""
+"Google Cloud servers, automatic geo-located daily backups, and 24/7 expert "
+"support. Speed, security, and migration tools included."
+msgstr ""
+
+#. translators: SiteGround affiliate URL. Change this URL in translations to use a localized landing page.
+#: includes/class-tccl-promo-banner.php:238
+msgid "https://stgrnd.co/telladowpbox"
+msgstr ""
+
+#: includes/class-tccl-promo-banner.php:289
+msgid "Starter kit for your site"
+msgstr ""
+
+#: includes/emails.php:46
+msgid "Terms accepted"
+msgstr ""
+
+#: includes/emails.php:46
+msgid "Terms NOT accepted"
+msgstr ""
+
+#: includes/emails.php:71 includes/order-metabox.php:103
+msgid "View record"
+msgstr ""
+
+#: includes/export-csv.php:48
+msgid "Email starts with"
+msgstr ""
+
+#: includes/export-csv.php:51
+msgid "Order # starts with"
+msgstr ""
+
+#: includes/export-csv.php:62
+msgid "None (full export)"
+msgstr ""
+
+#: includes/export-csv.php:113
+msgid "Site"
+msgstr ""
+
+#: includes/export-csv.php:114
+msgid "Site URL"
+msgstr ""
+
+#: includes/export-csv.php:115
+msgid "Exported at (UTC)"
+msgstr ""
+
+#: includes/export-csv.php:116
+msgid "Filter applied"
+msgstr ""
+
+#: includes/export-csv.php:117
+msgid "Total records"
+msgstr ""
+
+#: includes/order-metabox.php:21
+msgid "Consent record"
+msgstr ""
+
+#: includes/order-metabox.php:52
+msgid "Terms &amp; privacy:"
+msgstr ""
+
+#: includes/order-metabox.php:56
+msgid "Not accepted"
+msgstr ""
+
+#: includes/order-metabox.php:69
+msgid "Recorded at"
+msgstr ""
+
+#: includes/order-metabox.php:76
+msgid "Unsealed"
+msgstr ""
+
+#: includes/order-metabox.php:88
+msgid "View accepted text"
+msgstr ""
+
+#: includes/order-metabox.php:107
+msgid "Download PDF"
+msgstr ""
+
+#: includes/order-metabox.php:125
+msgid "Consent"
+msgstr ""
+
+#: includes/order-metabox.php:175
+msgid "No data (placed before plugin activation)"
+msgstr ""
+
+#: includes/privacy-tools.php:27 includes/privacy-tools.php:125
+msgid "Terms & Conditions Consent Log"
+msgstr ""
+
+#: includes/privacy-tools.php:188
+#, php-format
+msgid ""
+"%d consent record was anonymised. The record itself is kept as evidence of "
+"lawful processing."
+msgid_plural ""
+"%d consent records were anonymised. The records themselves are kept as "
+"evidence of lawful processing."
+msgstr[0] ""
+msgstr[1] ""
