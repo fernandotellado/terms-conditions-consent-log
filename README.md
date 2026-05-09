@@ -13,7 +13,7 @@ WooCommerce stores a boolean for the terms checkbox, but article 7.1 of the GDPR
 
 ## Features
 
-- **Captures** the WooCommerce native terms checkbox at checkout — timestamp UTC, IP, user agent, source URL, document version and the exact text shown to the customer.
+- **Captures** the WooCommerce native terms checkbox at checkout — timestamp UTC, IP, user agent, document version and the exact text shown to the customer.
 - **Custom indexed table** — no `wp_postmeta` bloat.
 - **Tamper-evident**: every record is sealed with a SHA-256 hash of the accepted text the moment it is written. Any later change to the stored text breaks the seal and is reported as `TAMPERED` in the records list, in the order metabox and on the certificate view.
 - **Printable A4 certificate** per record, with a built-in "Print / Save as PDF" button — your browser exports the certificate to PDF natively, no external library bundled.
@@ -59,7 +59,16 @@ WordPress.org listing.
 
 ## Screenshots
 
-Screenshots will be added under `assets-github/screenshots/`. They are excluded from the WordPress.org release ZIP.
+Stored under [`screenshots/`](screenshots/) and excluded from the WordPress.org release ZIP.
+
+| | |
+|:---:|:---:|
+| ![Records list](screenshots/01-records-list.jpg) | ![Settings tab](screenshots/02-settings.jpg) |
+| Records list with live filters, integrity column and CSV export. | Settings tab with editable texts, version control, retention, email options and uninstall control. |
+| ![Order metabox](screenshots/03-order-metabox.jpg) | ![Consent column on orders list](screenshots/04-orders-column.jpg) |
+| Order metabox with consent summary, integrity badge and certificate button. | Consent column on the orders list. |
+| ![Printable certificate](screenshots/05-certificate.jpg) | ![Exported CSV](screenshots/06-csv.jpg) |
+| Printable A4 certificate (the browser saves it as PDF). | Exported CSV file with metadata header and translated column names. |
 
 ## FAQ
 
@@ -70,7 +79,7 @@ Not yet. Classic checkout is fully supported. Block Checkout is on the roadmap.
 In a dedicated, indexed table `wp_tccl_consents`. Order meta keys (`_tccl_terms_accepted`, `_tccl_terms_version`, `_tccl_recorded_at`) mirror the summary so the order edit screen does not need to query the log table.
 
 **Can I log consents from contact forms?**
-Yes. `tccl_save_consent()` is a public function — pass the email, type, version, text and value, and the plugin handles IP, user agent, source URL, hashing and timestamping. See `readme.txt` for a Contact Form 7 example.
+Yes. `tccl_save_consent()` is a public function — pass the email, type, version, text and value, and the plugin handles IP, user agent, hashing and timestamping. See `readme.txt` for a Contact Form 7 example.
 
 **What happens if I uninstall the plugin?**
 By default, nothing is deleted. The consent evidence survives uninstall. Only if you explicitly enable "Delete all data on uninstall" in Settings does the table get dropped.
@@ -112,7 +121,7 @@ WooCommerce guarda solo un booleano del checkbox, pero el artículo 7.1 del RGPD
 
 ### Características
 
-- **Captura** el checkbox nativo de términos de WooCommerce en el checkout — fecha y hora UTC, IP, user-agent, URL de origen, versión del documento y el texto exacto que se mostró al cliente.
+- **Captura** el checkbox nativo de términos de WooCommerce en el checkout — fecha y hora UTC, IP, user-agent, versión del documento y el texto exacto que se mostró al cliente.
 - **Tabla custom indexada** — sin saturar `wp_postmeta`.
 - **A prueba de manipulación**: cada registro se sella con un hash SHA-256 del texto aceptado en el momento del consentimiento. Cualquier cambio posterior del texto rompe el sello y se reporta como `MANIPULADO` en el listado, en el metabox del pedido y en la vista del certificado.
 - **Certificado A4 imprimible** por registro, con botón "Imprimir / Guardar como PDF" — el navegador lo exporta a PDF de forma nativa, sin librerías externas en el plugin.
@@ -158,7 +167,16 @@ Listado en WordPress.org.
 
 ### Capturas
 
-Las capturas se irán añadiendo en `assets-github/screenshots/`. Quedan excluidas del ZIP que se publica en WordPress.org.
+Guardadas en [`screenshots/`](screenshots/) y excluidas del ZIP que se publica en WordPress.org.
+
+| | |
+|:---:|:---:|
+| ![Listado de registros](screenshots/01-records-list.jpg) | ![Pestaña Ajustes](screenshots/02-settings.jpg) |
+| Listado de registros con filtros en vivo, columna de integridad y exportación CSV. | Pestaña Ajustes con textos editables, control de versión, retención, emails y desinstalación. |
+| ![Metabox del pedido](screenshots/03-order-metabox.jpg) | ![Columna Consentimiento en pedidos](screenshots/04-orders-column.jpg) |
+| Metabox del pedido con resumen, badge de integridad y botón al certificado. | Columna Consentimiento en el listado de pedidos. |
+| ![Certificado imprimible](screenshots/05-certificate.jpg) | ![CSV exportado](screenshots/06-csv.jpg) |
+| Certificado A4 imprimible (el navegador lo guarda como PDF). | CSV exportado con cabecera de metadatos y columnas traducidas. |
 
 ### Preguntas frecuentes
 
@@ -169,7 +187,7 @@ Aún no. El checkout clásico está totalmente soportado. El de bloques está en
 En una tabla propia indexada `wp_tccl_consents`. Los meta del pedido (`_tccl_terms_accepted`, `_tccl_terms_version`, `_tccl_recorded_at`) duplican el resumen para que la pantalla de edición del pedido no consulte la tabla de log.
 
 **¿Puedo registrar consentimientos desde formularios de contacto?**
-Sí. `tccl_save_consent()` es una función pública — pasa el email, tipo, versión, texto y valor, y el plugin se encarga de IP, user-agent, URL de origen, hashing y timestamp. En `readme.txt` hay un ejemplo para Contact Form 7.
+Sí. `tccl_save_consent()` es una función pública — pasa el email, tipo, versión, texto y valor, y el plugin se encarga de IP, user-agent, hashing y timestamp. En `readme.txt` hay un ejemplo para Contact Form 7.
 
 **¿Qué pasa si desinstalo el plugin?**
 Por defecto no se borra nada. La prueba del consentimiento sobrevive a la desinstalación. Solo si activas explícitamente "Borrar todos los datos al desinstalar" en Ajustes se elimina la tabla.
