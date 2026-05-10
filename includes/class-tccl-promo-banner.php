@@ -36,14 +36,23 @@ class TCCL_Promo_Banner {
 	private $css_prefix;
 
 	/**
+	 * Optional dashicon class shown next to the banner title.
+	 *
+	 * @var string
+	 */
+	private $plugin_icon;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param string $current_plugin_slug WordPress.org slug of the host plugin.
 	 * @param string $css_prefix          CSS class prefix used on the rendered elements.
+	 * @param string $plugin_icon         Optional dashicon class (e.g. "dashicons-yes-alt").
 	 */
-	public function __construct( $current_plugin_slug, $css_prefix ) {
+	public function __construct( $current_plugin_slug, $css_prefix, $plugin_icon = '' ) {
 		$this->current_plugin_slug = $current_plugin_slug;
 		$this->css_prefix          = $css_prefix;
+		$this->plugin_icon         = (string) $plugin_icon;
 	}
 
 	/**
@@ -286,7 +295,12 @@ class TCCL_Promo_Banner {
 		$prefix  = $this->css_prefix;
 		?>
 		<div class="<?php echo esc_attr( $prefix ); ?>-promo-notice">
-			<h4><?php esc_html_e( 'Starter kit for your site', 'terms-conditions-consent-log' ); ?></h4>
+			<h4>
+				<?php if ( '' !== $this->plugin_icon ) : ?>
+					<span class="dashicons <?php echo esc_attr( $this->plugin_icon ); ?> <?php echo esc_attr( $prefix ); ?>-promo-host-icon" aria-hidden="true"></span>
+				<?php endif; ?>
+				<?php esc_html_e( 'Starter kit for your site', 'terms-conditions-consent-log' ); ?>
+			</h4>
 			<div class="<?php echo esc_attr( $prefix ); ?>-promo-columns">
 
 				<?php foreach ( $plugins as $slug => $plugin ) : ?>

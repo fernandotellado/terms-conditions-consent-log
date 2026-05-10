@@ -15,6 +15,20 @@
 	margin-bottom: 20px;
 }
 
+.tccl-wrap > h1 {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.tccl-page-icon {
+	color: var(--tccl-color-ok);
+	font-size: 28px;
+	width: 28px;
+	height: 28px;
+	line-height: 1;
+}
+
 .tccl-section-intro {
 	max-width: 640px;
 	margin: 0 0 12px;
@@ -239,6 +253,17 @@
 	font-size: 11px;
 	color: #50575e;
 	word-break: break-all;
+}
+
+.tccl-records-table .tccl-source-url {
+	margin: 8px 0 0;
+	font-size: 11px;
+	color: #50575e;
+	word-break: break-all;
+}
+
+.tccl-records-table .tccl-source-url a {
+	color: #2271b1;
 }
 
 .tccl-records-table .tccl-actions-col {

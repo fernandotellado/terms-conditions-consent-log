@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *     @type string $consent_version Document version in force.
  *     @type string $consent_text    Full text shown to the subject.
  *     @type int    $consent_value   1 = accepted, 0 = rejected.
+ *     @type string $source_url      Optional. URL of the page where the consent was given.
  * }
  * @return int|false Insert ID on success, false on failure.
  */
@@ -37,6 +38,7 @@ function tccl_save_consent( $args ) {
 		'consent_version' => '',
 		'consent_text'    => '',
 		'consent_value'   => 0,
+		'source_url'      => '',
 	);
 	$args     = wp_parse_args( $args, $defaults );
 	$args     = apply_filters( 'tccl_save_consent_args', $args );
@@ -53,6 +55,13 @@ function tccl_save_consent( $args ) {
 
 	$consent_text = wp_kses_post( $args['consent_text'] );
 	$hash         = '' !== $consent_text ? hash( 'sha256', $consent_text ) : '';
+	$source_url   = '';
+	if ( ! empty( $args['source_url'] ) ) {
+		$candidate = esc_url_raw( (string) $args['source_url'] );
+		if ( '' !== $candidate ) {
+			$source_url = mb_substr( $candidate, 0, 500 );
+		}
+	}
 
 	// phpcs:ignore WordPress.DB.DirectDatabaseQuery -- Custom table, intentional.
 	$result = $wpdb->insert(
@@ -68,9 +77,10 @@ function tccl_save_consent( $args ) {
 			'consent_value'     => $args['consent_value'] ? 1 : 0,
 			'ip_address'        => tccl_get_client_ip(),
 			'user_agent'        => $user_agent,
+			'source_url'        => $source_url,
 			'created_at'        => current_time( 'mysql', true ),
 		),
-		array( '%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s' )
+		array( '%d', '%d', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s', '%s' )
 	);
 
 	if ( false === $result ) {

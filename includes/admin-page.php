@@ -10,11 +10,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers the admin menu under WooCommerce.
+ * Registers the admin menu.
+ *
+ * When WooCommerce is active the menu lives under the WooCommerce parent
+ * (so existing installs see no change). Otherwise it falls back to the
+ * Settings parent. The parent is filterable via `tccl_admin_menu_parent`.
  */
 function tccl_register_admin_menu() {
+	$default_parent = class_exists( 'WooCommerce' ) ? 'woocommerce' : 'users.php';
+	$parent         = apply_filters( 'tccl_admin_menu_parent', $default_parent );
+
+	// Defensive: if a filter forces the WooCommerce parent but WC is not
+	// available, fall back to Users so the menu still appears.
+	if ( 'woocommerce' === $parent && ! class_exists( 'WooCommerce' ) ) {
+		$parent = 'users.php';
+	}
+
 	add_submenu_page(
-		'woocommerce',
+		$parent,
 		esc_html__( 'Consent log', 'terms-conditions-consent-log' ),
 		esc_html__( 'Consent log', 'terms-conditions-consent-log' ),
 		tccl_admin_capability(),
@@ -30,14 +43,21 @@ add_action( 'admin_menu', 'tccl_register_admin_menu' );
  * @param string $hook Current admin page hook suffix.
  */
 function tccl_enqueue_admin_assets( $hook ) {
-	$is_plugin = ( 'woocommerce_page_tccl-consents' === $hook );
-	$is_hpos   = ( false !== strpos( (string) $hook, 'wc-orders' ) );
+	// The admin page hook suffix changes with the menu parent
+	// (woocommerce_page_tccl-consents, settings_page_tccl-consents, ...),
+	// so match the trailing slug instead of the full hook.
+	$is_plugin = ( false !== strpos( (string) $hook, '_page_tccl-consents' ) );
+	$is_hpos   = false;
 	$is_legacy = false;
-	// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only check of which order screen is being rendered, no state change.
-	if ( 'post.php' === $hook && isset( $_GET['post'] ) ) {
-		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only check of post type for the requested post.
-		$post_type = get_post_type( absint( $_GET['post'] ) );
-		$is_legacy = ( 'shop_order' === $post_type );
+
+	if ( class_exists( 'WooCommerce' ) ) {
+		$is_hpos = ( false !== strpos( (string) $hook, 'wc-orders' ) );
+		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only check of which order screen is being rendered, no state change.
+		if ( 'post.php' === $hook && isset( $_GET['post'] ) ) {
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only check of post type for the requested post.
+			$post_type = get_post_type( absint( $_GET['post'] ) );
+			$is_legacy = ( 'shop_order' === $post_type );
+		}
 	}
 
 	if ( ! $is_plugin && ! $is_hpos && ! $is_legacy ) {
@@ -70,15 +90,24 @@ function tccl_handle_settings_save() {
 	$current = tccl_get_all_settings();
 	$updated = $current;
 
-	$updated['terms_text']                  = isset( $_POST['terms_text'] ) ? wp_kses_post( wp_unslash( $_POST['terms_text'] ) ) : '';
-	$updated['pre_checkout_text']           = isset( $_POST['pre_checkout_text'] ) ? wp_kses_post( wp_unslash( $_POST['pre_checkout_text'] ) ) : '';
-	$updated['consent_version']             = isset( $_POST['consent_version'] ) ? sanitize_text_field( wp_unslash( $_POST['consent_version'] ) ) : $current['consent_version'];
-	$updated['track_ip']                    = isset( $_POST['track_ip'] ) ? 1 : 0;
-	$updated['track_user_agent']            = isset( $_POST['track_user_agent'] ) ? 1 : 0;
-	$updated['retention_days']              = isset( $_POST['retention_days'] ) ? absint( $_POST['retention_days'] ) : 0;
-	$updated['delete_data_on_uninstall']    = isset( $_POST['delete_data_on_uninstall'] ) ? 1 : 0;
-	$updated['email_admin_show_consent']    = isset( $_POST['email_admin_show_consent'] ) ? 1 : 0;
-	$updated['email_customer_show_consent'] = isset( $_POST['email_customer_show_consent'] ) ? 1 : 0;
+	$updated['consent_version']          = isset( $_POST['consent_version'] ) ? sanitize_text_field( wp_unslash( $_POST['consent_version'] ) ) : $current['consent_version'];
+	$updated['track_ip']                 = isset( $_POST['track_ip'] ) ? 1 : 0;
+	$updated['track_user_agent']         = isset( $_POST['track_user_agent'] ) ? 1 : 0;
+	$updated['retention_days']           = isset( $_POST['retention_days'] ) ? absint( $_POST['retention_days'] ) : 0;
+	$updated['delete_data_on_uninstall'] = isset( $_POST['delete_data_on_uninstall'] ) ? 1 : 0;
+	$updated['log_comment_consent']      = isset( $_POST['log_comment_consent'] ) ? 1 : 0;
+	$updated['cf7_log_acceptance']       = isset( $_POST['cf7_log_acceptance'] ) ? 1 : 0;
+	$updated['consent_box_default_text'] = isset( $_POST['consent_box_default_text'] ) ? wp_kses_post( wp_unslash( $_POST['consent_box_default_text'] ) ) : '';
+
+	// WooCommerce-specific fields are only present in the form when WC is
+	// active, so only update them in that case to avoid wiping their value
+	// while WC is temporarily deactivated.
+	if ( class_exists( 'WooCommerce' ) ) {
+		$updated['terms_text']                  = isset( $_POST['terms_text'] ) ? wp_kses_post( wp_unslash( $_POST['terms_text'] ) ) : '';
+		$updated['pre_checkout_text']           = isset( $_POST['pre_checkout_text'] ) ? wp_kses_post( wp_unslash( $_POST['pre_checkout_text'] ) ) : '';
+		$updated['email_admin_show_consent']    = isset( $_POST['email_admin_show_consent'] ) ? 1 : 0;
+		$updated['email_customer_show_consent'] = isset( $_POST['email_customer_show_consent'] ) ? 1 : 0;
+	}
 
 	$bump_version = isset( $_POST['tccl_bump_version'] ) ? 1 : 0;
 	if ( $bump_version || ( $updated['terms_text'] !== $current['terms_text'] && $updated['consent_version'] === $current['consent_version'] ) ) {
@@ -364,7 +393,10 @@ function tccl_render_admin_page() {
 	}
 	?>
 	<div class="wrap tccl-wrap">
-		<h1><?php esc_html_e( 'Terms &amp; Conditions Consent Log', 'terms-conditions-consent-log' ); ?></h1>
+		<h1>
+			<span class="dashicons dashicons-yes-alt tccl-page-icon" aria-hidden="true"></span>
+			<?php esc_html_e( 'Terms &amp; Conditions Consent Log', 'terms-conditions-consent-log' ); ?>
+		</h1>
 
 		<h2 class="nav-tab-wrapper">
 			<a href="<?php echo esc_url( admin_url( 'admin.php?page=tccl-consents&tab=records' ) ); ?>" class="nav-tab <?php echo 'records' === $tab ? 'nav-tab-active' : ''; ?>">
@@ -410,6 +442,18 @@ function tccl_render_records_tab() {
 	$paged    = isset( $_GET['paged'] ) ? max( 1, absint( $_GET['paged'] ) ) : 1;
 	$per_page = 10;
 	$offset   = ( $paged - 1 ) * $per_page;
+
+	// If WooCommerce is not available but the log holds order-linked records,
+	// warn the admin so they understand why order links are not clickable.
+	if ( ! class_exists( 'WooCommerce' ) ) {
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery, WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
+		$tccl_with_orders = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$table} WHERE order_id > 0" );
+		if ( $tccl_with_orders > 0 ) {
+			echo '<div class="notice notice-warning"><p>';
+			esc_html_e( 'WooCommerce is not active, but the consent log contains records linked to orders. Order links are disabled until WooCommerce is reactivated. The records themselves remain intact.', 'terms-conditions-consent-log' );
+			echo '</p></div>';
+		}
+	}
 
 	list( $where_sql, $params ) = tccl_build_filter_where( $filter );
 
@@ -497,10 +541,12 @@ function tccl_render_records_tab() {
 			<input type="text" name="email" value="<?php echo esc_attr( $filter['email'] ); ?>" placeholder="<?php esc_attr_e( 'customer@', 'terms-conditions-consent-log' ); ?>" autocomplete="off">
 		</label>
 
-		<label class="tccl-filter-field">
-			<span><?php esc_html_e( 'Order # (starts with)', 'terms-conditions-consent-log' ); ?></span>
-			<input type="text" inputmode="numeric" pattern="[0-9]*" name="order_id" value="<?php echo esc_attr( $filter['order_id'] ); ?>" placeholder="<?php esc_attr_e( '1234', 'terms-conditions-consent-log' ); ?>" autocomplete="off">
-		</label>
+		<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+			<label class="tccl-filter-field">
+				<span><?php esc_html_e( 'Order # (starts with)', 'terms-conditions-consent-log' ); ?></span>
+				<input type="text" inputmode="numeric" pattern="[0-9]*" name="order_id" value="<?php echo esc_attr( $filter['order_id'] ); ?>" placeholder="<?php esc_attr_e( '1234', 'terms-conditions-consent-log' ); ?>" autocomplete="off">
+			</label>
+		<?php endif; ?>
 
 		<label class="tccl-filter-field">
 			<span><?php esc_html_e( 'From', 'terms-conditions-consent-log' ); ?></span>
@@ -583,25 +629,29 @@ function tccl_render_records_body( $items, $total, $current_version, $filter, $p
 	<?php tccl_render_pagination_nav( $paged, $total, $total_pages, 'top' ); ?>
 
 	<div class="tccl-table-wrap">
+		<?php $tccl_show_order_col = class_exists( 'WooCommerce' ); ?>
+		<?php $tccl_table_colspan = $tccl_show_order_col ? 11 : 10; ?>
 		<table class="wp-list-table widefat striped tccl-records-table">
 			<thead>
 				<tr>
 					<th><?php esc_html_e( 'ID', 'terms-conditions-consent-log' ); ?></th>
 					<th><?php esc_html_e( 'Date (UTC)', 'terms-conditions-consent-log' ); ?></th>
 					<th><?php esc_html_e( 'Email', 'terms-conditions-consent-log' ); ?></th>
-					<th><?php esc_html_e( 'Order', 'terms-conditions-consent-log' ); ?></th>
+					<?php if ( $tccl_show_order_col ) : ?>
+						<th><?php esc_html_e( 'Order', 'terms-conditions-consent-log' ); ?></th>
+					<?php endif; ?>
 					<th><?php esc_html_e( 'Type', 'terms-conditions-consent-log' ); ?></th>
 					<th><?php esc_html_e( 'Version', 'terms-conditions-consent-log' ); ?></th>
 					<th><?php esc_html_e( 'Status', 'terms-conditions-consent-log' ); ?></th>
 					<th><?php esc_html_e( 'IP', 'terms-conditions-consent-log' ); ?></th>
 					<th><?php esc_html_e( 'Integrity', 'terms-conditions-consent-log' ); ?></th>
-					<th><?php esc_html_e( 'Accepted text + SHA-256', 'terms-conditions-consent-log' ); ?></th>
+					<th><?php esc_html_e( 'Accepted text + SHA-256 + Source URL', 'terms-conditions-consent-log' ); ?></th>
 					<th class="tccl-actions-col"><?php esc_html_e( 'Actions', 'terms-conditions-consent-log' ); ?></th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php if ( empty( $items ) ) : ?>
-					<tr><td colspan="11"><?php esc_html_e( 'No records match your filter.', 'terms-conditions-consent-log' ); ?></td></tr>
+					<tr><td colspan="<?php echo (int) $tccl_table_colspan; ?>"><?php esc_html_e( 'No records match your filter.', 'terms-conditions-consent-log' ); ?></td></tr>
 				<?php else : ?>
 					<?php
 					foreach ( $items as $item ) :
@@ -612,11 +662,18 @@ function tccl_render_records_body( $items, $total, $current_version, $filter, $p
 							<td><?php echo absint( $item->id ); ?></td>
 							<td><code><?php echo esc_html( $item->created_at ); ?></code></td>
 							<td class="tccl-cell-email"><?php echo esc_html( $item->email ); ?></td>
-							<td>
-								<?php if ( $item->order_id ) : ?>
-									<a href="<?php echo esc_url( admin_url( 'post.php?post=' . absint( $item->order_id ) . '&action=edit' ) ); ?>" target="_blank" rel="noopener noreferrer">#<?php echo absint( $item->order_id ); ?></a>
-								<?php else : ?>—<?php endif; ?>
-							</td>
+							<?php if ( $tccl_show_order_col ) : ?>
+								<td>
+									<?php
+									if ( $item->order_id ) {
+										$tccl_default_order_link = '<a href="' . esc_url( admin_url( 'post.php?post=' . absint( $item->order_id ) . '&action=edit' ) ) . '" target="_blank" rel="noopener noreferrer">#' . absint( $item->order_id ) . '</a>';
+										echo wp_kses_post( apply_filters( 'tccl_record_order_link', $tccl_default_order_link, (int) $item->order_id, $item ) );
+									} else {
+										echo '—';
+									}
+									?>
+								</td>
+							<?php endif; ?>
 							<td><code><?php echo esc_html( $item->consent_type ); ?></code></td>
 							<td><code><?php echo esc_html( $item->consent_version ); ?></code></td>
 							<td>
@@ -644,6 +701,12 @@ function tccl_render_records_body( $items, $total, $current_version, $filter, $p
 									<summary><?php echo esc_html( wp_html_excerpt( wp_strip_all_tags( $item->consent_text ), 80, '…' ) ); ?></summary>
 									<div class="tccl-text-full">
 										<div class="tccl-text-html"><?php echo wp_kses_post( $item->consent_text ); ?></div>
+										<?php if ( ! empty( $item->source_url ) ) : ?>
+											<p class="tccl-source-url">
+												<?php esc_html_e( 'Source:', 'terms-conditions-consent-log' ); ?>
+												<a href="<?php echo esc_url( $item->source_url ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $item->source_url ); ?></a>
+											</p>
+										<?php endif; ?>
 										<?php if ( '' !== $item->consent_text_hash ) : ?>
 											<p class="tccl-hash">SHA-256: <code><?php echo esc_html( $item->consent_text_hash ); ?></code></p>
 										<?php endif; ?>
@@ -780,7 +843,8 @@ function tccl_render_settings_tab() {
 	<form method="post" action="">
 		<?php wp_nonce_field( 'tccl_save_settings' ); ?>
 
-		<h2><?php esc_html_e( 'Checkout texts', 'terms-conditions-consent-log' ); ?></h2>
+		<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+		<h2><?php esc_html_e( 'WooCommerce checkout texts', 'terms-conditions-consent-log' ); ?></h2>
 		<p class="description tccl-section-intro">
 			<?php esc_html_e( 'Both fields are optional. Whatever the customer is actually shown is what gets stored with each record.', 'terms-conditions-consent-log' ); ?>
 		</p>
@@ -808,6 +872,7 @@ function tccl_render_settings_tab() {
 				</td>
 			</tr>
 		</table>
+		<?php endif; // WooCommerce checkout texts. ?>
 
 		<h2><?php esc_html_e( 'Document version', 'terms-conditions-consent-log' ); ?></h2>
 		<p class="description tccl-section-intro">
@@ -901,6 +966,7 @@ function tccl_render_settings_tab() {
 			<?php endif; ?>
 		</p>
 
+		<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 		<h2><?php esc_html_e( 'Order emails', 'terms-conditions-consent-log' ); ?></h2>
 		<p class="description tccl-section-intro">
 			<?php esc_html_e( 'Off by default. Not required by GDPR — the record itself is the legal evidence.', 'terms-conditions-consent-log' ); ?>
@@ -927,6 +993,64 @@ function tccl_render_settings_tab() {
 					</label>
 					<p class="description">
 						<?php esc_html_e( 'Reinforces transparency toward the customer. Some customers expect a confirmation that their acceptance was recorded; others may find it unusual. Off by default; turn it on if it fits your brand.', 'terms-conditions-consent-log' ); ?>
+					</p>
+				</td>
+			</tr>
+		</table>
+		<?php endif; // Order emails section requires WooCommerce. ?>
+
+		<h2><?php esc_html_e( 'Integrations', 'terms-conditions-consent-log' ); ?></h2>
+		<p class="description tccl-section-intro">
+			<?php esc_html_e( 'Sources of consent the plugin can capture beyond WooCommerce checkout. The two automatic capture toggles are off by default — enable each one as you need it.', 'terms-conditions-consent-log' ); ?>
+		</p>
+		<table class="form-table" role="presentation">
+			<tr>
+				<th scope="row"><?php esc_html_e( 'WordPress comments', 'terms-conditions-consent-log' ); ?></th>
+				<td>
+					<label>
+						<input type="checkbox" name="log_comment_consent" value="1" <?php checked( 1, (int) $settings['log_comment_consent'] ); ?>>
+						<?php esc_html_e( 'Log consent when a visitor leaves a comment with the native "Save my name, email, and website..." checkbox ticked', 'terms-conditions-consent-log' ); ?>
+					</label>
+					<p class="description">
+						<?php esc_html_e( 'Uses the native WordPress wp-comment-cookies-consent checkbox introduced in WP 4.9.6. Stored as consent_type "comment_consent". Only fires when the visitor ticks the box.', 'terms-conditions-consent-log' ); ?>
+					</p>
+				</td>
+			</tr>
+			<?php if ( defined( 'WPCF7_VERSION' ) ) : ?>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Contact Form 7', 'terms-conditions-consent-log' ); ?></th>
+					<td>
+						<label>
+							<input type="checkbox" name="cf7_log_acceptance" value="1" <?php checked( 1, (int) $settings['cf7_log_acceptance'] ); ?>>
+							<?php esc_html_e( 'Log every CF7 form submission that ticks an [acceptance] field', 'terms-conditions-consent-log' ); ?>
+						</label>
+						<p class="description">
+							<?php esc_html_e( 'Detects [acceptance] fields automatically and the first email field of the form. Stored as consent_type "cf7_form_{ID}", one type per form. Source URL of the page where the form was submitted is recorded too.', 'terms-conditions-consent-log' ); ?>
+						</p>
+					</td>
+				</tr>
+			<?php else : ?>
+				<tr>
+					<th scope="row"><?php esc_html_e( 'Contact Form 7', 'terms-conditions-consent-log' ); ?></th>
+					<td>
+						<p class="description">
+							<?php esc_html_e( 'Contact Form 7 is not active. Install and activate it to enable automatic capture of [acceptance] fields.', 'terms-conditions-consent-log' ); ?>
+						</p>
+					</td>
+				</tr>
+			<?php endif; ?>
+			<tr>
+				<th scope="row"><label for="tccl_consent_box_default_text"><?php esc_html_e( 'Consent box default text', 'terms-conditions-consent-log' ); ?></label></th>
+				<td>
+					<textarea id="tccl_consent_box_default_text" name="consent_box_default_text" rows="3" cols="60" class="large-text" placeholder="<?php esc_attr_e( 'I have read and agree to the privacy policy.', 'terms-conditions-consent-log' ); ?>"><?php echo esc_textarea( $settings['consent_box_default_text'] ); ?></textarea>
+					<p class="description">
+						<?php
+						printf(
+							/* translators: %s: shortcode example wrapped in <code>. */
+							esc_html__( 'Used by the %s shortcode and the "Consent box" block when no explicit text is provided. Basic HTML allowed (links, strong, em). Leave empty to use the generic default shown as the placeholder above.', 'terms-conditions-consent-log' ),
+							'<code>[tccl_consent_box]</code>'
+						);
+						?>
 					</p>
 				</td>
 			</tr>

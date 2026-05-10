@@ -29,6 +29,7 @@ function tccl_install() {
 		consent_value TINYINT(1) NOT NULL DEFAULT 0,
 		ip_address VARCHAR(45) NOT NULL,
 		user_agent TEXT NOT NULL,
+		source_url VARCHAR(500) NOT NULL DEFAULT '',
 		created_at DATETIME NOT NULL,
 		PRIMARY KEY (id),
 		KEY order_id (order_id),
@@ -77,5 +78,7 @@ function tccl_get_default_settings() {
 		'delete_data_on_uninstall'    => 0,
 		'email_admin_show_consent'    => 0,
 		'email_customer_show_consent' => 0,
+		'log_comment_consent'         => 0,
+		'cf7_log_acceptance'          => 0,
 	);
 }

@@ -1,0 +1,69 @@
+/* Terms & Conditions Consent Log — front-end consent box */
+
+.tccl-consent-box {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	max-width: 540px;
+	margin: 0 0 1.5em;
+	padding: 16px 18px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #1d2327;
+}
+
+.tccl-consent-box__row {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin: 0;
+}
+
+.tccl-consent-box__checkbox {
+	margin-top: 3px;
+	flex: 0 0 auto;
+}
+
+.tccl-consent-box__text {
+	flex: 1 1 auto;
+}
+
+.tccl-consent-box__email {
+	flex-direction: column;
+	align-items: stretch;
+	gap: 4px;
+}
+
+.tccl-consent-box__email span {
+	font-size: 13px;
+	color: #50575e;
+}
+
+.tccl-consent-box__email input[type="email"] {
+	width: 100%;
+	padding: 6px 8px;
+	box-sizing: border-box;
+}
+
+.tccl-consent-box__submit {
+	align-self: flex-start;
+}
+
+.tccl-consent-box__feedback {
+	margin: 0;
+	min-height: 1.4em;
+	font-size: 13px;
+	color: #50575e;
+}
+
+.tccl-consent-box__feedback.is-success {
+	color: #1a7f37;
+	font-weight: 600;
+}
+
+.tccl-consent-box__feedback.is-error {
+	color: #cf222e;
+}

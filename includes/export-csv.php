@@ -31,6 +31,7 @@ function tccl_csv_column_labels() {
 		'consent_value'     => __( 'Accepted', 'terms-conditions-consent-log' ),
 		'ip_address'        => __( 'IP address', 'terms-conditions-consent-log' ),
 		'user_agent'        => __( 'User agent', 'terms-conditions-consent-log' ),
+		'source_url'        => __( 'Source URL', 'terms-conditions-consent-log' ),
 		'created_at'        => __( 'Recorded at (UTC)', 'terms-conditions-consent-log' ),
 	);
 	return apply_filters( 'tccl_csv_column_labels', $labels );
@@ -122,7 +123,7 @@ function tccl_handle_export() {
 	// Column header row (nice, translated labels).
 	$columns = apply_filters(
 		'tccl_csv_columns',
-		array( 'id', 'order_id', 'user_id', 'email', 'consent_type', 'consent_version', 'consent_text', 'consent_text_hash', 'consent_value', 'ip_address', 'user_agent', 'created_at' )
+		array( 'id', 'order_id', 'user_id', 'email', 'consent_type', 'consent_version', 'consent_text', 'consent_text_hash', 'consent_value', 'ip_address', 'user_agent', 'source_url', 'created_at' )
 	);
 	$labels       = tccl_csv_column_labels();
 	$header_row   = array();

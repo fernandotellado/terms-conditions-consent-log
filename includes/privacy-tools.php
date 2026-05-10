@@ -89,6 +89,10 @@ function tccl_personal_data_exporter( $email_address, $page = 1 ) {
 					'value' => $row->user_agent,
 				),
 				array(
+					'name'  => __( 'Source URL', 'terms-conditions-consent-log' ),
+					'value' => isset( $row->source_url ) ? (string) $row->source_url : '',
+				),
+				array(
 					'name'  => __( 'Accepted text', 'terms-conditions-consent-log' ),
 					'value' => $row->consent_text,
 				),

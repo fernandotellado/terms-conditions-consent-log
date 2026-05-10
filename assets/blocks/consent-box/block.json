@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "tccl/consent-box",
+	"title": "Consent box",
+	"category": "widgets",
+	"icon": "yes-alt",
+	"description": "A self-contained consent checkbox that records each acceptance in the consent log.",
+	"textdomain": "terms-conditions-consent-log",
+	"keywords": ["consent", "gdpr", "privacy", "checkbox"],
+	"supports": {
+		"html": false,
+		"reusable": true,
+		"align": ["wide"]
+	},
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": ""
+		},
+		"consentType": {
+			"type": "string",
+			"default": "consent_box"
+		},
+		"consentVersion": {
+			"type": "string",
+			"default": ""
+		},
+		"submitLabel": {
+			"type": "string",
+			"default": ""
+		},
+		"successMessage": {
+			"type": "string",
+			"default": ""
+		},
+		"requireEmail": {
+			"type": "string",
+			"default": "auto",
+			"enum": ["auto", "yes", "no"]
+		}
+	},
+	"editorScript": "tccl-consent-box-editor"
+}

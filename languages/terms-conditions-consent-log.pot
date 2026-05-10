@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Terms & Conditions Consent Log 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/fernandot/terms-conditions-consent-log/issues\n"
-"POT-Creation-Date: 2026-05-09 22:42+0200\n"
-"PO-Revision-Date: 2026-05-09 22:42+0200\n"
+"POT-Creation-Date: 2026-05-10 11:00+0200\n"
+"PO-Revision-Date: 2026-05-10 11:00+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: \n"
@@ -166,7 +166,7 @@ msgid "Integrity"
 msgstr ""
 
 #: includes/admin-page.php:573
-msgid "Accepted text + SHA-256"
+msgid "Accepted text + SHA-256 + Source URL"
 msgstr ""
 
 #: includes/admin-page.php:574
@@ -1111,3 +1111,155 @@ msgid_plural ""
 "evidence of lawful processing."
 msgstr[0] ""
 msgstr[1] ""
+
+#: includes/admin-page.php:828
+msgid "WooCommerce checkout texts"
+msgstr ""
+
+#: includes/admin-page.php:451
+msgid "WooCommerce is not active, but the consent log contains records linked to orders. Order links are disabled until WooCommerce is reactivated. The records themselves remain intact."
+msgstr ""
+
+#: includes/admin-page.php:1046
+msgid "Integrations"
+msgstr ""
+
+#: includes/admin-page.php:1048
+msgid "Sources of consent the plugin can capture beyond WooCommerce checkout. The two automatic capture toggles are off by default — enable each one as you need it."
+msgstr ""
+
+#: includes/admin-page.php:1052
+msgid "WordPress comments"
+msgstr ""
+
+#: includes/admin-page.php:1056
+msgid "Log consent when a visitor leaves a comment with the native \"Save my name, email, and website...\" checkbox ticked"
+msgstr ""
+
+#: includes/admin-page.php:1059
+msgid "Uses the native WordPress wp-comment-cookies-consent checkbox introduced in WP 4.9.6. Stored as consent_type \"comment_consent\". Only fires when the visitor ticks the box."
+msgstr ""
+
+#: includes/admin-page.php:1066 includes/admin-page.php:1083
+msgid "Contact Form 7"
+msgstr ""
+
+#: includes/admin-page.php:1070
+msgid "Log every CF7 form submission that ticks an [acceptance] field"
+msgstr ""
+
+#: includes/admin-page.php:1073
+msgid "Detects [acceptance] fields automatically and the first email field of the form. Stored as consent_type \"cf7_form_{ID}\", one type per form. Source URL of the page where the form was submitted is recorded too."
+msgstr ""
+
+#: includes/admin-page.php:1086
+msgid "Contact Form 7 is not active. Install and activate it to enable automatic capture of [acceptance] fields."
+msgstr ""
+
+#: includes/admin-page.php:1093
+msgid "Consent box default text"
+msgstr ""
+
+#. translators: %s: shortcode example wrapped in <code>.
+#: includes/admin-page.php:1100
+#, php-format
+msgid "Used by the %s shortcode and the \"Consent box\" block when no explicit text is provided. Basic HTML allowed (links, strong, em). Leave empty to use the generic default shown as the placeholder above."
+msgstr ""
+
+#: includes/admin-page.php:702
+msgid "Source:"
+msgstr ""
+
+#: includes/certificate-pdf.php:280 includes/export-csv.php:34
+#: includes/privacy-tools.php:91
+msgid "Source URL"
+msgstr ""
+
+#: includes/consent-box.php:42 assets/blocks/consent-box/edit.js:69
+msgid "Accept"
+msgstr ""
+
+#: includes/consent-box.php:43 assets/blocks/consent-box/edit.js:75
+msgid "Thank you, your acceptance has been recorded."
+msgstr ""
+
+#: includes/consent-box.php:48 assets/blocks/consent-box/edit.js:34
+msgid "I have read and agree to the privacy policy."
+msgstr ""
+
+#: includes/consent-box.php:91
+msgid "Your email"
+msgstr ""
+
+#: includes/consent-box.php:142
+msgid "Invalid nonce."
+msgstr ""
+
+#: includes/consent-box.php:155
+msgid "Email is required."
+msgstr ""
+
+#: includes/consent-box.php:175
+msgid "Could not save consent."
+msgstr ""
+
+#: includes/activation-notice.php:55
+msgid "Terms & Conditions Consent Log is ready."
+msgstr ""
+
+#: includes/activation-notice.php:58
+msgid "Your WooCommerce checkout is already being captured. You can also enable Contact Form 7, comments and the [tccl_consent_box] shortcode in Settings."
+msgstr ""
+
+#: includes/activation-notice.php:60
+msgid "Open the admin page to enable Contact Form 7, comments capture or grab the [tccl_consent_box] shortcode/block."
+msgstr ""
+
+#: includes/activation-notice.php:65
+msgid "Open Consent log"
+msgstr ""
+
+#: assets/blocks/consent-box/block.json
+msgctxt "block title"
+msgid "Consent box"
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:44
+msgid "Consent text"
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:45
+msgid "Text shown next to the checkbox. Basic HTML allowed (links, strong, em)."
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:51
+msgid "Slug stored with each record. Use a different value per use case (e.g. newsletter_signup)."
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:56
+msgid "Consent version"
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:57
+msgid "Leave empty to use the global plugin version."
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:62
+msgid "Submit button label"
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:71
+msgid "Success message"
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:79
+msgid "Require email"
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:82
+msgid "Auto (only when visitor is not logged in)"
+msgstr ""
+
+#: assets/blocks/consent-box/edit.js:101
+msgid "Preview only. The live form (with submit button) shows on the front-end."
+msgstr ""

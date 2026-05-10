@@ -143,6 +143,14 @@ function tccl_capture_after_order_processed( $order_id ) {
 	$version  = (string) tccl_get_setting( 'consent_version', '1.0' );
 	$text     = tccl_resolve_displayed_terms_text();
 
+	$source_url = '';
+	if ( function_exists( 'wc_get_checkout_url' ) ) {
+		$source_url = (string) wc_get_checkout_url();
+	}
+	if ( '' === $source_url && ! empty( $_SERVER['HTTP_REFERER'] ) ) {
+		$source_url = esc_url_raw( wp_unslash( (string) $_SERVER['HTTP_REFERER'] ) );
+	}
+
 	tccl_save_consent(
 		array(
 			'order_id'        => $order_id,
@@ -152,6 +160,7 @@ function tccl_capture_after_order_processed( $order_id ) {
 			'consent_version' => $version,
 			'consent_text'    => $text,
 			'consent_value'   => $accepted,
+			'source_url'      => $source_url,
 		)
 	);
 

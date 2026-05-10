@@ -55,10 +55,14 @@ function tccl_suggest_next_version( $current ) {
 
 /**
  * Returns the capability required to manage the plugin.
+ *
+ * Defaults to `manage_woocommerce` when WooCommerce is available so existing
+ * installs keep working unchanged, and falls back to `manage_options` otherwise.
  * Filter `tccl_admin_capability` to override.
  *
  * @return string
  */
 function tccl_admin_capability() {
-	return apply_filters( 'tccl_admin_capability', 'manage_woocommerce' );
+	$default = class_exists( 'WooCommerce' ) ? 'manage_woocommerce' : 'manage_options';
+	return apply_filters( 'tccl_admin_capability', $default );
 }

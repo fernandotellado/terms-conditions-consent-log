@@ -277,6 +277,7 @@ function tccl_render_certificate_html( $record ) {
 					<tr><th><?php esc_html_e( 'Accepted', 'terms-conditions-consent-log' ); ?></th><td><?php echo $record->consent_value ? esc_html__( 'Yes', 'terms-conditions-consent-log' ) : esc_html__( 'No', 'terms-conditions-consent-log' ); ?></td></tr>
 					<tr><th><?php esc_html_e( 'IP address', 'terms-conditions-consent-log' ); ?></th><td><?php echo esc_html( $record->ip_address ); ?></td></tr>
 					<tr><th><?php esc_html_e( 'User agent', 'terms-conditions-consent-log' ); ?></th><td><?php echo esc_html( $record->user_agent ); ?></td></tr>
+					<tr><th><?php esc_html_e( 'Source URL', 'terms-conditions-consent-log' ); ?></th><td><?php echo ! empty( $record->source_url ) ? esc_html( $record->source_url ) : '—'; ?></td></tr>
 				</tbody>
 			</table>
 		</section>
