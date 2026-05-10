@@ -54,15 +54,6 @@ Storing thousands of consent records in `wp_postmeta` is wasteful and slow. The 
 
 All strings use the `terms-conditions-consent-log` text domain. Spanish (es_ES) is bundled.
 
-= Roadmap =
-
-* Block Checkout (Gutenberg-based) support for WooCommerce.
-* Multiple configurable consent checkboxes per source (privacy, marketing, age verification, custom).
-* Version history and diff viewer.
-* More form-builder integrations (Gravity Forms, WPForms, Fluent Forms).
-* Read REST API endpoints.
-* WP-CLI commands.
-
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/terms-conditions-consent-log/` or install through Plugins > Add New.

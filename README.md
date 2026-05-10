@@ -190,14 +190,15 @@ The plugin renders a one-page A4 view with print-optimised CSS and a "Print / Sa
 
 ## Roadmap
 
-- WooCommerce Block Checkout support.
-- Multiple configurable consent checkboxes per source (privacy, marketing, age verification, custom).
-- Version history and diff viewer for the legal text.
-- More form-builder integrations (Gravity Forms, WPForms, Fluent Forms).
-- Read REST API endpoints.
-- WP-CLI commands.
-- Continuous integration (WPCS, Plugin Check, PHPUnit).
-- More translations (fr_FR, de_DE, it_IT, pt_BR).
+Top priorities for the next versions:
+
+1. **More form-builder integrations** — Gravity Forms, WPForms, Fluent Forms, Forminator and Elementor Forms (same automatic-capture pattern as Contact Form 7).
+2. **WordPress login and registration capture** — opt-in hooks on `wp_login` and `user_register`.
+3. **WooCommerce login and registration capture** — opt-in hooks on `woocommerce_login_form`, `woocommerce_register_form` and `woocommerce_created_customer`.
+
+Other items, no fixed order: WooCommerce Block Checkout (when it leaves beta), version history and diff viewer for the legal text, multiple configurable consent checkboxes per source, read REST API endpoints, WP-CLI commands, HMAC-SHA-256 sealing with installation secret, hash chain between records, scheduled integrity checks via WP-Cron, consent withdrawal flag, `[tccl_my_consents]` shortcode for the data subject, webhook out, dashboard widget, more form-builder and newsletter integrations, CCPA / LGPD / POPIA exporters, continuous integration (WPCS, Plugin Check, PHPUnit), more translations (fr_FR, de_DE, it_IT, pt_BR).
+
+Full list with notes in [tccl-roadmap.md](tccl-roadmap.md).
 
 ## Contributing
 
@@ -396,14 +397,15 @@ El plugin renderiza una vista A4 de una página con CSS optimizado para impresi�
 
 ### Roadmap
 
-- Soporte del Checkout de bloques de WooCommerce.
-- Múltiples checkboxes de consentimiento configurables por fuente (privacidad, marketing, edad, personalizados).
-- Histórico de versiones y visor de diff del texto legal.
-- Más integraciones de form builders (Gravity Forms, WPForms, Fluent Forms).
-- Endpoints REST API de lectura.
-- Comandos de WP-CLI.
-- Integración continua (WPCS, Plugin Check, PHPUnit).
-- Más traducciones (fr_FR, de_DE, it_IT, pt_BR).
+Prioridades inmediatas para las próximas versiones:
+
+1. **Más integraciones con form builders** — Gravity Forms, WPForms, Fluent Forms, Forminator y Elementor Forms (mismo patrón de captura automática que Contact Form 7).
+2. **Captura del login y del registro de WordPress** — hooks opt-in en `wp_login` y `user_register`.
+3. **Captura del login y del registro de WooCommerce** — hooks opt-in en `woocommerce_login_form`, `woocommerce_register_form` y `woocommerce_created_customer`.
+
+Otros temas, sin orden fijo: Checkout de bloques de WooCommerce (cuando salga de beta), histórico de versiones y visor de diff del texto legal, múltiples checkboxes de consentimiento configurables por fuente, endpoints REST API de lectura, comandos de WP-CLI, sello HMAC-SHA-256 con secret de instalación, cadena de hashes entre registros, verificación de integridad automática vía WP-Cron, registro de retirada de consentimiento, shortcode `[tccl_my_consents]` para el sujeto, webhook saliente, widget de dashboard, más integraciones de form builders y newsletters, exporters CCPA / LGPD / POPIA, integración continua (WPCS, Plugin Check, PHPUnit), más traducciones (fr_FR, de_DE, it_IT, pt_BR).
+
+Lista completa con notas en [tccl-roadmap.md](tccl-roadmap.md).
 
 ### Contribuir
 
