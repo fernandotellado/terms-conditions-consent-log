@@ -405,7 +405,7 @@ Otras ideas, sin orden fijo: Bloques de finalizar compra de WooCommerce (cuando 
 
 ### Contribuir
 
-Issuese e ideas son bienvenidos. Si planeas un cambio no trivial, abre una issue antes para liarte.
+Se agradecen reportes de issues e ideas. Si quieres un cambio no trivial, abre una issue antes de liarte.
 
 ### Licencia
 
