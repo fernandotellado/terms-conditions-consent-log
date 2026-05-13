@@ -212,25 +212,25 @@ GPL-2.0-or-later. See [LICENSE](LICENSE).
 
 > [🇬🇧 English version](#terms--conditions-consent-log) · 🇪🇸 Español (aquí estás)
 
-Plugin de WordPress que convierte cualquier checkbox de aceptación — el del checkout de WooCommerce, el de un formulario de Contact Form 7, el de los comentarios de WordPress o el de un shortcode/bloque propio — en una prueba de consentimiento defendible bajo el RGPD. Funciona **con o sin** WooCommerce.
+Plugin de WordPress que convierte cualquier casilla de aceptación — la del pago de WooCommerce, de un formulario de Contact Form 7, la de los comentarios de WordPress o de un shortcode/bloque propio, en una prueba de consentimiento defendible bajo el RGPD. Funciona **con o sin** WooCommerce.
 
 El artículo 7.1 del RGPD pide más que un booleano: fecha y hora, IP, user-agent, versión del documento en vigor en ese momento y el texto exacto que vio el usuario. Este plugin captura todo eso en una tabla propia indexada, sella cada registro con un hash SHA-256 para detectar cualquier modificación posterior, se integra con las Herramientas de Privacidad nativas de WordPress y genera un certificado A4 imprimible por registro (tu navegador lo guarda como PDF en un clic).
 
 ### Características
 
-- **Funciona con o sin WooCommerce.** Si WooCommerce está activo, el plugin captura el checkbox de términos del checkout exactamente igual que antes. Si no, el plugin se instala sin problemas y aparece bajo `Usuarios → Registro de consentimientos`.
+- **Funciona con o sin WooCommerce.** Si WooCommerce está activo, el plugin captura la casilla de aceptación de los términos y condiciones del pago exactamente igual que antes. Si no, el plugin se instala sin problemas y aparece bajo `Usuarios → Registro de consentimientos`.
 - **Captura del checkout de WooCommerce** — fecha y hora UTC, IP, user-agent, versión del documento, URL de origen y el texto exacto mostrado al cliente.
 - **Integración con Contact Form 7 (opt-in)** — captura automática de cualquier formulario que tenga un campo `[acceptance]` marcado por el visitante. Un `consent_type` por formulario (`cf7_form_{ID}`) para que los registros sigan filtrables por formulario.
-- **Integración con comentarios de WordPress (opt-in)** — registra el checkbox nativo `wp-comment-cookies-consent` (introducido en WP 4.9.6) cuando el visitante lo marca.
-- **Shortcode y bloque Gutenberg `[tccl_consent_box]`** — pega un checkbox de consentimiento autocontenido en cualquier sitio (página, entrada, área de widgets, campo HTML de un form builder…). Al enviarse va a un endpoint REST y registra el consentimiento. Sin código.
+- **Integración con comentarios de WordPress (opt-in)** — registra la casilla de aceptación nativa `wp-comment-cookies-consent` (introducida en WP 4.9.6) cuando el visitante la marca.
+- **Shortcode y bloque Gutenberg `[tccl_consent_box]`** — pega una casilla de consentimiento completa propia en cualquier sitio (página, entrada, área de widgets, campo HTML de un maquetador de formularios…). Al enviarse va a un endpoint REST y registra el consentimiento. Sin código.
 - **API pública** — `tccl_save_consent()` para registrar consentimientos desde flujos personalizados, plugins, endpoints REST, etc.
 - **Tabla custom indexada** — sin saturar `wp_postmeta`.
-- **A prueba de manipulación**: cada registro se sella con un hash SHA-256 del texto aceptado en el momento del consentimiento. Cualquier cambio posterior del texto rompe el sello y se reporta como `MANIPULADO` en el listado, en el metabox del pedido y en la vista del certificado.
+- **A prueba de manipulación**: cada registro se sella con un hash SHA-256 del texto aceptado en el momento del consentimiento. Cualquier cambio posterior del texto rompe el sello y se reporta como `MANIPULADO` en el listado, en la caja meta del pedido y en la vista del certificado.
 - **Certificado A4 imprimible** por registro, con botón "Imprimir / Guardar como PDF" — el navegador lo exporta a PDF de forma nativa, sin librerías externas en el plugin.
 - **Integración nativa con Herramientas de Privacidad** — `Herramientas > Exportar datos personales` y `Herramientas > Borrar datos personales` incluyen los consentimientos. El borrado anonimiza (no elimina), porque el propio registro es la base legítima para conservar la prueba.
-- **Ambos textos del checkout son opcionales** — el del checkbox y el párrafo informativo previo al checkout vienen vacíos por defecto, así una instalación nueva respeta el texto nativo de WooCommerce. Lo que ve el cliente es lo que se guarda.
-- **Filtros de búsqueda parcial en vivo** (email, pedido, rango de fechas, tipo) con auto-submit con debounce y exportación CSV filtrada.
-- **Retención configurable** con anonimización en un clic (los registros se conservan; los datos personales se borran). Anonimización por filtro desde la pestaña de Registros.
+- **Ambos textos del pago son opcionales** — el de la casilla de aceptación y el párrafo informativo previo al pago vienen vacíos por defecto, así una instalación nueva respeta el texto nativo de WooCommerce. Lo que ve el cliente es lo que se guarda.
+- **Filtros de búsqueda parcial en vivo** (email, pedido, rango de fechas, tipo) con auto-envío con límite de frecuencia (debounce) y exportación CSV filtrada.
+- **Retención configurable** con anonimización en un clic (los registros se conservan; los datos personales se borran). Anonimización por filtro desde la pestaña de registros.
 - **Línea de consentimiento opcional en los emails de WooCommerce** (admin y cliente, ambas desactivadas por defecto).
 - **Eliminación de datos al desinstalar opcional** (desactivado por defecto — desinstalar no destruye la prueba salvo que lo actives explícitamente).
 - **Compatible con HPOS** (custom order tables).
@@ -259,18 +259,18 @@ Listado en WordPress.org.
 
 ### Inicio rápido
 
-Tras activar, el plugin vive bajo `WooCommerce → Registro de consentimientos` si WooCommerce está activo, o bajo `Usuarios → Registro de consentimientos` si no. La pestaña Registros funciona igual en ambos casos.
+Tras activar, el plugin vive bajo `WooCommerce → Registro de consentimientos` si WooCommerce está activo, o bajo `Usuarios → Registro de consentimientos` si no. La pestaña de registros funciona igual en ambos casos.
 
-1. Abre la pestaña **Ajustes** y define la versión del documento (formato `MAJOR.MINOR-YYYY-MM-DD`) — el plugin la incrementa automáticamente cuando cambia el texto del checkbox de WooCommerce.
+1. Abre la pestaña **Ajustes** y define la versión del documento (formato `MAJOR.MINOR-YYYY-MM-DD`) — el plugin la incrementa automáticamente cuando cambia el texto de la casilla de aceptación de WooCommerce.
 2. En la sección **Integraciones**, activa las fuentes de las que quieras capturar consentimiento: comentarios, Contact Form 7 (solo aparece si CF7 está activo) o limítate a usar el shortcode/bloque `[tccl_consent_box]`.
-3. (Solo WooCommerce) Opcionalmente edita el texto del checkbox y añade un párrafo informativo previo al checkout (aviso RGPD).
+3. (Solo WooCommerce) Opcionalmente edita el texto de la casilla y añade un párrafo informativo previo al finalizar compra (aviso RGPD).
 4. Provoca una aceptación de prueba desde cada fuente activada. Abre la pestaña **Registros** para ver el log, filtrar por `consent_type`, exportar, verificar integridad o abrir el certificado imprimible de cualquier registro.
 
 ### Funcionando con o sin WooCommerce
 
 El plugin reconoce cuatro fuentes de consentimiento. Usa las que apliquen a tu sitio:
 
-#### A. Checkout de WooCommerce (automático si WooCommerce está activo)
+#### A. Finalizar compra de WooCommerce (automático si WooCommerce está activo)
 
 Sin configuración — al activarse, el plugin captura el checkbox nativo de términos del checkout. El `consent_type` es `terms_and_privacy` y el texto guardado es exactamente lo que vio el cliente (el texto por defecto de WooCommerce, o el tuyo si has personalizado).
 
@@ -290,11 +290,11 @@ Sin código, sin snippets, sin tocar `functions.php`.
 
 1. Ve a `Registro de consentimientos → Ajustes → Integraciones`.
 2. Marca **Registrar consentimiento cuando un visitante deja un comentario con la casilla nativa marcada**.
-3. El plugin usa el checkbox `wp-comment-cookies-consent` que WordPress 4.9.6+ añade bajo el formulario de comentarios en la mayoría de temas. Cada envío con el checkbox marcado se guarda como registro de tipo `comment_consent`, con el email del comentarista.
+3. El plugin usa la casilla de aceptación `wp-comment-cookies-consent` que WordPress 4.9.6+ añade bajo el formulario de comentarios en la mayoría de temas. Cada envío con la casilla marcada se guarda como registro de tipo `comment_consent`, con el email del comentarista.
 
 #### D. Shortcode y bloque `[tccl_consent_box]` (siempre disponible)
 
-Un checkbox autocontenido que puedes pegar donde quieras — página, entrada, widget, campo HTML de un form builder, footer, etc.
+Una casilla propia completa que puedes pegar donde quieras: página, entrada, widget, campo HTML de un maquetador de formularios, pie de página, etc.
 
 ```
 [tccl_consent_box text="He leído y acepto la <a href='/privacidad'>política de privacidad</a>." consent_type="newsletter_signup"]
@@ -310,26 +310,26 @@ Atributos disponibles:
 
 | Atributo | Default | Notas |
 |---|---|---|
-| `text` | Recurre al **Texto por defecto del consent box** de `Registro de consentimientos → Ajustes → Integraciones` y, si está vacío, a una frase genérica de privacidad | Texto mostrado junto al checkbox. Admite HTML básico. También se puede pasar como contenido del shortcode. |
+| `text` | Recurre al **Texto por defecto del consent box** de `Registro de consentimientos → Ajustes → Integraciones` y, si está vacío, a una frase genérica de privacidad | Texto mostrado junto a la casilla. Admite HTML básico. También se puede pasar como contenido del shortcode. |
 | `consent_type` | `consent_box` | Slug que se guarda en el registro. Usa un valor distinto por caso de uso (`newsletter_signup`, `descarga_ebook`…). |
 | `consent_version` | Versión global del plugin | Etiqueta de versión del documento. Vacío para heredar. |
 | `submit_label` | `Aceptar` | Texto del botón de envío. |
 | `success` | "Gracias, hemos registrado tu aceptación." | Mensaje al enviar correctamente. |
-| `require_email` | `auto` | `auto` pide email solo si el visitante no está logueado. `yes` siempre lo pide. `no` nunca lo pide (solo útil para usuarios logueados). |
+| `require_email` | `auto` | `auto` pide email solo si el visitante no está logueado. `yes` siempre lo pide. `no` nunca lo pide (solo útil para usuarios conectados). |
 
-El bloque se llama **Consent box** y vive en la categoría *Widgets*. Insertarlo muestra una vista previa editable; el comportamiento real (envío, REST) solo corre en el front.
+El bloque se llama **Casilla de consentimiento** y está en la categoría *Widgets*. Al insertarlo muestra una vista previa editable; el comportamiento real (envío, REST) solo funciona en la parte visible de la web.
 
 **Dónde tiene sentido pegarlo**
 
 - En una página o entrada con un párrafo explicativo encima.
 - En un widget de barra lateral o área de footer.
-- En un campo HTML/Custom HTML de un form builder (Gravity Forms, WPForms, Fluent Forms…) cuando quieras un único registro por formulario, no uno por campo de aceptación.
+- En un campo HTML/Custom HTML de un maquetador de formularios (Gravity Forms, WPForms, Fluent Forms…) cuando quieras un único registro por formulario, no uno por campo de aceptación.
 - En cualquier plugin que permita pegar HTML o shortcodes en un campo de "texto extra".
 
 **Dónde NO conviene pegarlo (importante)**
 
-- **No lo uses como sustituto del check de cookies de un plugin de cookies/banners** (Complianz, CookieYes, Cookie Notice, Real Cookie Banner…). Aunque técnicamente se puede, el contexto legal es distinto: el banner de cookies se rige por la directiva ePrivacy y trata sobre cookies; este registro es para *consentimientos específicos a tratamientos concretos de datos personales* (RGPD art. 7.1). Mezclarlos da una prueba ambigua. Si tu plugin de cookies guarda su propio log, déjale a él esa función.
-- En formularios donde el texto del consentimiento cambie dinámicamente — el shortcode guarda el HTML que renderiza, así que el texto debe ser estático.
+- **No lo uses como sustituto de la aceptación de cookies de un plugin de cookies/banners** (Complianz, CookieYes, Cookie Notice, Real Cookie Banner…). Aunque técnicamente se puede, el contexto legal es distinto: el banner de cookies se rige por la directiva ePrivacy y trata sobre cookies; este registro es para *consentimientos específicos a tratamientos concretos de datos personales* (RGPD art. 7.1). Mezclarlos da una prueba ambigua. Si tu plugin de cookies guarda su propio log, déjale a él esa función.
+- En formularios donde el texto del consentimiento cambie dinámicamente. El shortcode guarda el HTML que procesa, así que el texto debe ser estático.
 
 #### E. Desde tu propio código
 
@@ -367,10 +367,10 @@ Guardadas en [`screenshots/`](screenshots/) y excluidas del ZIP que se publica e
 ### Preguntas frecuentes
 
 **¿Puedo usar el plugin sin WooCommerce?**
-Sí. Actívalo en cualquier WordPress y el menú aparece bajo `Usuarios → Registro de consentimientos`. Los Registros, los Ajustes, la exportación CSV, el certificado PDF y la integración con las Herramientas de Privacidad funcionan igual. Las piezas específicas de WooCommerce (captura del checkout, metabox del pedido, columna en el listado de pedidos, línea en los emails de pedido) solo se cargan si WooCommerce está activo.
+Sí. Actívalo en cualquier WordPress y el menú aparece bajo `Usuarios → Registro de consentimientos`. Los registros, los ajustes, la exportación CSV, el certificado PDF y la integración con las Herramientas de Privacidad funcionan igual. Las piezas específicas de WooCommerce (captura en el pago, caja meta del pedido, columna en el listado de pedidos, línea en los emails de pedido) solo se cargan si WooCommerce está activo.
 
-**¿Soporta el Checkout de bloques de WooCommerce?**
-Aún no. El checkout clásico está totalmente soportado. El de bloques está en el roadmap.
+**¿Es compatible con los bloques de pago del editor Gutenberg de WooCommerce?**
+Aún no. El pago clásico está totalmente contemplado. El de bloques está en la hoja de ruta.
 
 **¿Dónde se guardan los datos?**
 En una tabla propia indexada `wp_tccl_consents`. Si WooCommerce está activo, tres meta del pedido (`_tccl_terms_accepted`, `_tccl_terms_version`, `_tccl_recorded_at`) duplican el resumen para que la pantalla de edición del pedido no consulte la tabla de log.
@@ -379,10 +379,10 @@ En una tabla propia indexada `wp_tccl_consents`. Si WooCommerce está activo, tr
 No. Cubren escenarios legales distintos. El banner de cookies (Complianz, CookieYes, Real Cookie Banner…) se rige por la directiva ePrivacy y va de cookies. El registro de consentimientos guarda consentimientos explícitos a tratamientos concretos de datos personales (RGPD art. 7.1). Úsalos en paralelo, no como sustitutos.
 
 **¿Se registran automáticamente las aceptaciones de comentarios de WordPress?**
-No. Vienen desactivadas. Actívalo en `Registro de consentimientos → Ajustes → Integraciones`. Solo se registran los comentarios donde el visitante marca el checkbox nativo "Guarda mi nombre, correo y web…".
+No. Vienen desactivadas. Actívalo en `Registro de consentimientos → Ajustes → Integraciones`. Solo se registran los comentarios donde el visitante marca la casilla nativa "Guarda mi nombre, correo y web…".
 
 **¿Qué pasa si desactivo WooCommerce después de tener pedidos con consentimiento registrado?**
-Los registros se conservan intactos. Los enlaces a pedidos en la pestaña Registros se muestran como `#1234` en texto plano en lugar de enlaces, y aparece un aviso al inicio de la pestaña recordándolo. Reactiva WooCommerce y los enlaces vuelven a funcionar.
+Los registros se conservan intactos. Los enlaces a pedidos en la pestaña de registros se muestran como `#1234` en texto plano en lugar de enlaces, y aparece un aviso al inicio de la pestaña recordándolo. Reactiva WooCommerce y los enlaces vuelven a funcionar.
 
 **¿Qué pasa si desinstalo el plugin?**
 Por defecto no se borra nada. La prueba del consentimiento sobrevive a la desinstalación. Solo si activas explícitamente "Borrar todos los datos al desinstalar" en Ajustes se elimina la tabla.
@@ -391,21 +391,21 @@ Por defecto no se borra nada. La prueba del consentimiento sobrevive a la desins
 No. Solo lee `REMOTE_ADDR` — las cabeceras reenviadas se pueden falsear sin un proxy inverso verificado. Si tu hosting deja la IP del proxy en `REMOTE_ADDR`, vas a guardar la del proxy para todos los clientes.
 
 **¿El certificado es un PDF real?**
-El plugin renderiza una vista A4 de una página con CSS optimizado para impresión y un botón "Imprimir / Guardar como PDF". Los navegadores modernos (Chrome, Safari, Firefox, Edge) exportan esa vista a un PDF de verdad, de forma nativa — con la misma fidelidad que daría una librería en servidor, y con la ventaja de respetar el idioma y las tipografías de tu sitio. El plugin no carga librerías externas, así que se mantiene ligero.
 
+El plugin entrega una vista A4 de una página con CSS optimizado para impresión y un botón "Imprimir / Guardar como PDF". Los navegadores modernos (Chrome, Safari, Firefox, Edge) exportan esa vista a un PDF de verdad, de forma nativa, con la misma fidelidad que daría una librería en servidor, y con la ventaja de respetar el idioma y las tipografías de tu sitio. El plugin no carga librerías externas, y así se mantiene ligero.
 ### Roadmap
 
 Prioridades inmediatas para las próximas versiones:
 
-1. **Más integraciones con form builders** — Gravity Forms, WPForms, Fluent Forms, Forminator y Elementor Forms (mismo patrón de captura automática que Contact Form 7).
-2. **Captura del login y del registro de WordPress** — hooks opt-in en `wp_login` y `user_register`.
-3. **Captura del login y del registro de WooCommerce** — hooks opt-in en `woocommerce_login_form`, `woocommerce_register_form` y `woocommerce_created_customer`.
+1. **Más integraciones con formularios** — Gravity Forms, WPForms, Fluent Forms, Forminator y Elementor Forms (mismo patrón de captura automática que Contact Form 7).
+2. **Captura del login y del registro de WordPress** — hooks de aceptación(opt-in) en `wp_login` y `user_register`.
+3. **Captura del login y del registro de WooCommerce** — hooks de aceptación (opt-in) en `woocommerce_login_form`, `woocommerce_register_form` y `woocommerce_created_customer`.
 
-Otros temas, sin orden fijo: Checkout de bloques de WooCommerce (cuando salga de beta), histórico de versiones y visor de diff del texto legal, múltiples checkboxes de consentimiento configurables por fuente, endpoints REST API de lectura, comandos de WP-CLI, sello HMAC-SHA-256 con secret de instalación, cadena de hashes entre registros, verificación de integridad automática vía WP-Cron, registro de retirada de consentimiento, shortcode `[tccl_my_consents]` para el sujeto, webhook saliente, widget de dashboard, más integraciones de form builders y newsletters, exporters CCPA / LGPD / POPIA, integración continua (WPCS, Plugin Check, PHPUnit), más traducciones (fr_FR, de_DE, it_IT, pt_BR).
+Otras ideas, sin orden fijo: Bloques de finalizar compra de WooCommerce (cuando salga de beta), histórico de versiones y visor de diff del texto legal, múltiples casillas de consentimiento configurables por fuente, endpoints REST API de lectura, comandos de WP-CLI, sello HMAC-SHA-256 con secret de instalación, cadena de hashes entre registros, verificación de integridad automática vía WP-Cron, registro de retirada de consentimiento, shortcode `[tccl_my_consents]` para el sujeto, webhook saliente, widget de escritorio, más integraciones con maquetadores de formularios y newsletters, exportadores CCPA / LGPD / POPIA, integración continua (WPCS, Plugin Check, PHPUnit), más traducciones (fr_FR, de_DE, it_IT, pt_BR).
 
 ### Contribuir
 
-Issues, ideas y pull requests son bienvenidos. Si planeas un cambio no trivial, abre una issue antes para alinear.
+Issuese e ideas son bienvenidos. Si planeas un cambio no trivial, abre una issue antes para liarte.
 
 ### Licencia
 
