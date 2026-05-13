@@ -198,8 +198,6 @@ Top priorities for the next versions:
 
 Other items, no fixed order: WooCommerce Block Checkout (when it leaves beta), version history and diff viewer for the legal text, multiple configurable consent checkboxes per source, read REST API endpoints, WP-CLI commands, HMAC-SHA-256 sealing with installation secret, hash chain between records, scheduled integrity checks via WP-Cron, consent withdrawal flag, `[tccl_my_consents]` shortcode for the data subject, webhook out, dashboard widget, more form-builder and newsletter integrations, CCPA / LGPD / POPIA exporters, continuous integration (WPCS, Plugin Check, PHPUnit), more translations (fr_FR, de_DE, it_IT, pt_BR).
 
-Full list with notes in [tccl-roadmap.md](tccl-roadmap.md).
-
 ## Contributing
 
 Issues, ideas and pull requests are welcome. Please open an issue first if you plan a non-trivial change.
@@ -404,8 +402,6 @@ Prioridades inmediatas para las próximas versiones:
 3. **Captura del login y del registro de WooCommerce** — hooks opt-in en `woocommerce_login_form`, `woocommerce_register_form` y `woocommerce_created_customer`.
 
 Otros temas, sin orden fijo: Checkout de bloques de WooCommerce (cuando salga de beta), histórico de versiones y visor de diff del texto legal, múltiples checkboxes de consentimiento configurables por fuente, endpoints REST API de lectura, comandos de WP-CLI, sello HMAC-SHA-256 con secret de instalación, cadena de hashes entre registros, verificación de integridad automática vía WP-Cron, registro de retirada de consentimiento, shortcode `[tccl_my_consents]` para el sujeto, webhook saliente, widget de dashboard, más integraciones de form builders y newsletters, exporters CCPA / LGPD / POPIA, integración continua (WPCS, Plugin Check, PHPUnit), más traducciones (fr_FR, de_DE, it_IT, pt_BR).
-
-Lista completa con notas en [tccl-roadmap.md](tccl-roadmap.md).
 
 ### Contribuir
 
