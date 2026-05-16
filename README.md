@@ -7,6 +7,14 @@
 ![PHP](https://img.shields.io/badge/PHP-7.4%2B-777bb4)
 ![WooCommerce](https://img.shields.io/badge/WooCommerce-compatible-7f54b3)
 
+> ## 📦 Submitted to WordPress.org
+>
+> This plugin has been submitted to the official WordPress.org plugin directory and is currently awaiting review.
+>
+> **If you already have it installed from this repo:** no action needed. Once the plugin is approved and published on WordPress.org, the next version will appear as a normal update in **Dashboard → Updates** within a few hours, because WordPress detects updates by plugin slug.
+>
+> This notice will be replaced once the plugin is live on WordPress.org.
+
 A WordPress plugin that turns any acceptance checkbox — at the WooCommerce checkout, in a Contact Form 7 form, in the WordPress comments form or in a stand-alone shortcode/block — into defensible GDPR evidence. Works with **or without** WooCommerce.
 
 Article 7.1 of the GDPR asks for more than a boolean: timestamp, IP, user agent, the document version in force at that moment and the exact text the user was shown. This plugin captures all of it in a dedicated indexed table, seals each record with a SHA-256 hash so any later edit is detectable, integrates with the native WordPress Privacy Tools and produces a one-page printable A4 certificate per record (your browser exports it to PDF in one click).
@@ -211,6 +219,14 @@ GPL-2.0-or-later. See [LICENSE](LICENSE).
 ## 🇪🇸 Versión en español
 
 > [🇬🇧 English version](#terms--conditions-consent-log) · 🇪🇸 Español (aquí estás)
+
+> ## 📦 Enviado a WordPress.org
+>
+> Este plugin se ha enviado al directorio oficial de plugins de WordPress.org y está pendiente de revisión.
+>
+> **Si ya lo tienes instalado desde este repositorio:** no tienes que hacer nada. Cuando el plugin se apruebe y publique en WordPress.org, la siguiente versión aparecerá como actualización normal en **Escritorio → Actualizaciones** en pocas horas, porque WordPress detecta las actualizaciones por el slug del plugin.
+>
+> Este aviso se sustituirá cuando el plugin esté publicado en WordPress.org.
 
 Plugin de WordPress que convierte cualquier casilla de aceptación — la del pago de WooCommerce, de un formulario de Contact Form 7, la de los comentarios de WordPress o de un shortcode/bloque propio, en una prueba de consentimiento defendible bajo el RGPD. Funciona **con o sin** WooCommerce.
 
